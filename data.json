@@ -1,61 +1,23 @@
 {
   "Weapons": [
     {
-      "productId": "product001_1",
-      "category": "Ceiling Fan",
-      "imgLink": "65 inches",
-      "productName": "Minka",
-      "Description": "Remote Control",
-      "priceList": "489.95",
-      "featured": ""
+      "category": "Firearm",
+      "imgLink": "./images/Sig_Sauer_M4.jpg",
+      "productName": "Sig Sauer M4",
+      "Description": "5.56 chambered semi-auto rifle.",
+      "priceList": "1300.00",
+      "featured": false
     },
     {
-        "productId": "product002_1",
-        "category": "Ceiling Fan",
-        "imgLink": "65 inches",
-        "productName": "Minka",
-        "Description": "Remote Control",
-        "priceList": "489.95",
-        "featured": ""
+        "category": "Firearm",
+        "imgLink": "./images/Sig_Sauer_M4.jpg",
+        "productName": "Sig Sauer M4",
+        "Description": "5.56 chambered semi-auto rifle.",
+        "priceList": "1300.00",
+        "featured": false
     },
-    {
-        "productId": "product003_2",
-        "category": "Ceiling Fan",
-        "imgLink": "65 inches",
-        "productName": "Minka",
-        "Description": "Remote Control",
-        "priceList": "489.95",
-        "featured": ""
-    },
-    {
-        "productId": "product004_2",
-        "category": "Ceiling Fan",
-        "imgLink": "65 inches",
-        "productName": "Minka",
-        "Description": "Remote Control",
-        "priceList": "489.95",
-        "featured": ""
-    },
-    {
-        "productId": "product005_3",
-        "category": "Ceiling Fan",
-        "imgLink": "65 inches",
-        "productName": "Minka",
-        "Description": "Remote Control",
-        "priceList": "489.95",
-        "featured": ""
-    },
-    {
-        "productId": "product006_3",
-        "category": "Ceiling Fan",
-        "imgLink": "65 inches",
-        "productName": "Minka",
-        "Description": "Remote Control",
-        "priceList": "489.95",
-        "featured": ""
-    }
   ],
-  
+
   "Vehicles": [
     {
       "productId": "product011_1",
