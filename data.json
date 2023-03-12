@@ -1,97 +1,62 @@
 {
-  "Ceiling Fan": [
+  "Weapons": [
     {
       "productId": "product001_1",
-      "productName": "Ceiling Fan",
-      "size": "65 inches",
-      "brand": "Minka",
-      "shortDescription": "Aire Xtreme H2O Coal Wet",
+      "category": "Ceiling Fan",
+      "imgLink": "65 inches",
+      "productName": "Minka",
       "Description": "Remote Control",
-      "priceList": "489.95"
+      "priceList": "489.95",
+      "featured": ""
     },
     {
-      "productId": "product001_2",
-      "productName": "Ceiling Fan",
-      "size": "65 inches",
-      "brand": "Minka",
-      "shortDescription": "Aire Windmolen Textured Coal LED Wet",
-      "Description": "Smart",
-      "priceList": "569.95"
+        "productId": "product002_1",
+        "category": "Ceiling Fan",
+        "imgLink": "65 inches",
+        "productName": "Minka",
+        "Description": "Remote Control",
+        "priceList": "489.95",
+        "featured": ""
     },
     {
-      "productId": "product001_3",
-      "productName": "Ceiling Fan",
-      "size": "60 inches",
-      "brand": "Minka",
-      "shortDescription": "Aire Dream Star Graphite Steel LED",
-      "Description": "Remote Control",
-      "priceList": "799.95"
+        "productId": "product003_2",
+        "category": "Ceiling Fan",
+        "imgLink": "65 inches",
+        "productName": "Minka",
+        "Description": "Remote Control",
+        "priceList": "489.95",
+        "featured": ""
     },
     {
-      "productId": "product002_1",
-      "productName": "Ceiling Fan",
-      "size": "56 inches",
-      "brand": "Mach 5",
-      "shortDescription": "Oil-Rubbed Bronze and Koa LED Damp",
-      "Description": "Remote Control",
-      "priceList": "379.95"
+        "productId": "product004_2",
+        "category": "Ceiling Fan",
+        "imgLink": "65 inches",
+        "productName": "Minka",
+        "Description": "Remote Control",
+        "priceList": "489.95",
+        "featured": ""
     },
     {
-      "productId": "product003_1",
-      "productName": "Ceiling Fan",
-      "size": "60 inches",
-      "brand": "Monte Carlo Maverick",
-      "shortDescription": "Matte Black",
-      "Description": "Remote Control",
-      "priceList": "659.99"
+        "productId": "product005_3",
+        "category": "Ceiling Fan",
+        "imgLink": "65 inches",
+        "productName": "Minka",
+        "Description": "Remote Control",
+        "priceList": "489.95",
+        "featured": ""
     },
     {
-      "productId": "product003_2",
-      "productName": "Ceiling Fan",
-      "size": "70 inches",
-      "brand": "Monte Carlo Maverick",
-      "shortDescription": "Matte Black",
-      "Description": "Remote Control",
-      "priceList": "743.99"
-    },
-    {
-      "productId": "product003_3",
-      "productName": "Ceiling Fan",
-      "size": "70 inches",
-      "brand": "Monte Carlo Maverick",
-      "shortDescription": "Walnut Wood",
-      "Description": "Remote Control",
-      "priceList": "743.99"
-    },
-    {
-      "productId": "product003_4",
-      "productName": "Ceiling Fan",
-      "size": "70 inches",
-      "brand": "Monte Carlo Maverick",
-      "shortDescription": "Aged Pewter",
-      "Description": "Remote Control",
-      "priceList": "743.99"
-    },
-    {
-      "productId": "product004_1",
-      "productName": "Ceiling Fan",
-      "size": "52 inches",
-      "brand": "Casa",
-      "shortDescription": "Delta-Wing Bronze Damp Outdoor LED",
-      "Description": "Remote Control",
-      "priceList": "249.95"
-    },
-    {
-      "productId": "product004_2",
-      "productName": "Ceiling Fan",
-      "size": "56 inches",
-      "brand": "Casa",
-      "shortDescription": "Vieja Rally Bronze Damp Rated LED",
-      "Description": "Remote Control",
-      "priceList": "299.99"
+        "productId": "product006_3",
+        "category": "Ceiling Fan",
+        "imgLink": "65 inches",
+        "productName": "Minka",
+        "Description": "Remote Control",
+        "priceList": "489.95",
+        "featured": ""
     }
   ],
-  "Wall Light": [
+  
+  "Vehicles": [
     {
       "productId": "product011_1",
       "productName": "Wall Light",
@@ -137,8 +102,17 @@
       "Description": "Wall Sconce",
       "priceList": "315.2"
     }
+    {
+      "productId": "product015_1",
+      "productName": "Wall Light",
+      "size": "8 1/4 inches",
+      "brand": "Hudson Valley Barron",
+      "shortDescription": "H Polished Nickel Sconce",
+      "Description": "Wall Sconce",
+      "priceList": "315.2"
+    }
   ],
-  "Jacket": [
+  "Miscellaneous": [
     {
       "productId": "product030_1",
       "productName": "Jacket",
