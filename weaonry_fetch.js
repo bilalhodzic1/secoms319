@@ -9,10 +9,10 @@ fetch(".data.json")
     console.log("error:" + err);
   });
 function appendData(data) {
-  let mainContainer = document.getElementById("");
-  for (let productName in data) {
+  let mainContainer = document.getElementById("main_catalog");
+  for (let product_type in data) {
     let div = document.createElement("div");
-    div.innerHTML = `<br> <br> <h2> ${productName} </h2>`;
+    div.innerHTML = ``;
     mainContainer.appendChild(div);
     let mainContainer2 = document.getElementById("myProduct");
     for (let element of data[productName]) {
