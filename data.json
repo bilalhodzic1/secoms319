@@ -10,12 +10,28 @@
     },
     {
         "category": "Firearm",
-        "imgLink": "./images/Sig_Sauer_M4.jpg",
-        "productName": "Sig Sauer M4",
-        "Description": "5.56 chambered semi-auto rifle.",
-        "priceList": "1300.00",
+        "imgLink": "./images/M1_Garand.jpg",
+        "productName": "M1 Garand",
+        "Description": "7.62 chambered semi-auto rifle.",
+        "priceList": "1500.00",
         "featured": false
     },
+    {
+        "category": "Close Combat",
+        "imgLink": "./images/Ka-Bar_USMC_Knife.jpg",
+        "productName": "Ka-Bar USMC Knife",
+        "Description": "Standard issue fighting/work knife used by USMC infantry during WWII.",
+        "priceList": "130.00",
+        "featured": true
+    }
+    {
+        "category": "Close Combat",
+        "imgLink": "./images/Ka-Bar_USMC_Knife.jpg",
+        "productName": "Ka-Bar USMC Knife",
+        "Description": "Standard issue fighting/work knife used by USMC infantry during WWII.",
+        "priceList": "130.00",
+        "featured": true
+    }   
   ],
 
   "Vehicles": [
