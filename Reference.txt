@@ -1,0 +1,12 @@
+6 items a page.
+2 item in a category
+3 category total
+
+JSON
+id:
+category:
+imgLink:
+name:
+description:
+price:
+featured:
