@@ -7,6 +7,15 @@
     <title>Weaponry for sale</title>
   </head>
   <body>
+    <form onsubmit="storeSmtn()">
+      <label>Firearms</label>
+      <input type="radio" id="firearm_selector" name="filter" checked />
+      <label>close combat</label>
+      <input type="radio" id="close_combat_selector" name="filter" />
+      <label>Explosives</label>
+      <input type="radio" id="explosive_selector" name="filter" />
+      <input type="submit" name="submit" />
+    </form>
     <div id="main_catalog"></div>
     <script src="weaponry_fetch.js"></script>
   </body>
