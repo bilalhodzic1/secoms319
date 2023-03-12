@@ -6,106 +6,95 @@
       "productName": "Sig Sauer M4 Rifle",
       "Description": "5.56 chambered semi-auto rifle.",
       "priceList": "1300.00",
-      "featured": false
+      "featured": false,
+      "id": 1
     },
     {
-        "category": "Firearm",
-        "imgLink": "./images/M1_Garand.jpg",
-        "productName": "M1 Garand Rifle",
-        "Description": "7.62 chambered semi-auto rifle.",
-        "priceList": "1500.00",
-        "featured": false
+      "category": "Firearm",
+      "imgLink": "./images/M1_Garand.jpg",
+      "productName": "M1 Garand Rifle",
+      "Description": "7.62 chambered semi-auto rifle.",
+      "priceList": "1500.00",
+      "featured": false,
+      "id": 2
     },
     {
-        "category": "Close Combat",
-        "imgLink": "./images/Ka-Bar_USMC_Knife.jpg",
-        "productName": "Ka-Bar USMC Knife",
-        "Description": "Standard issue fighting/work knife used by USMC infantry during WWII.",
-        "priceList": "130.00",
-        "featured": true
+      "category": "Close Combat",
+      "imgLink": "./images/Ka-Bar_USMC_Knife.jpg",
+      "productName": "Ka-Bar USMC Knife",
+      "Description": "Standard issue fighting/work knife used by USMC infantry during WWII.",
+      "priceList": "130.00",
+      "featured": true,
+      "id": 3
     },
     {
-        "category": "Close Combat",
-        "imgLink": "./images/Glock_Feldmesser_FM_78.jpg",
-        "productName": "Glock Feldmesser FM 78 Knife",
-        "Description": "Austrian knife designed and manufactured by Glock. Developed in close coordination with Austrian special forces.",
-        "priceList": "50.00",
-        "featured": true    
+      "category": "Close Combat",
+      "imgLink": "./images/Glock_Feldmesser_FM_78.jpg",
+      "productName": "Glock Feldmesser FM 78 Knife",
+      "Description": "Austrian knife designed and manufactured by Glock. Developed in close coordination with Austrian special forces.",
+      "priceList": "50.00",
+      "featured": true,
+      "id": 4
     },
     {
-        "category": "Explosives",
-        "imgLink": "./images/German_Stick_Grenade.jpg",
-        "productName": "German Stick Grenade",
-        "Description": "A prominent WWI and WWII German manufactured grenade that is a great piece for any collector. Fully functional.",
-        "priceList": "75.00",
-        "featured": true    
+      "category": "Explosives",
+      "imgLink": "./images/German_Stick_Grenade.jpg",
+      "productName": "German Stick Grenade",
+      "Description": "A prominent WWI and WWII German manufactured grenade that is a great piece for any collector. Fully functional.",
+      "priceList": "75.00",
+      "featured": true,
+      "id": 5
     },
     {
-        "category": "Explosives",
-        "imgLink": "./images/German_Pigeon_Grenade.jpg",
-        "productName": "German Pigeon Grenade",
-        "Description": "An extremely rare piece of German WWI equipment that was used in tandem with the Granatenwerfer 16 infantry mortar. Not functional.",
-        "priceList": "100.00",
-        "featured": true    
+      "category": "Explosives",
+      "imgLink": "./images/German_Pigeon_Grenade.jpg",
+      "productName": "German Pigeon Grenade",
+      "Description": "An extremely rare piece of German WWI equipment that was used in tandem with the Granatenwerfer 16 infantry mortar. Not functional.",
+      "priceList": "100.00",
+      "featured": true,
+      "id": 6
     }
   ],
 
   "Vehicles": [
     {
-      "productId": "product011_1",
-      "productName": "Wall Light",
-      "size": "11 inches",
-      "brand": "Hinkley Sawyer",
-      "shortDescription": "High Sequoia Wood Finish Rustic",
-      "Description": "Wall Sconce",
-      "priceList": "127.2"
+      "category": "Land",
+      "imgLink": "./images/M60_Patton_Tank.jpg",
+      "productName": "M60 Patton Tank",
+      "Description": "The infamous tank that was most recognizably used during the Gulf war by U.S. forces. Though the first generation of these tanks have been out of serive for more than 20 years, we are proud to be able to sell our customers fully functioning units.",
+      "priceList": "500000",
+      "featured": true,
+      "id": 1
     },
     {
-      "productId": "product012_1",
-      "productName": "Wall Light",
-      "size": "17 inches",
-      "brand": "Feiss Loras",
-      "shortDescription": "High Dark Weathered Iron",
-      "Description": "Wall Sconce",
-      "priceList": "115.98"
+      "category": "Land",
+      "imgLink": "./images/M113_APC.jpg",
+      "productName": "M113 Armored Personnel Carrier",
+      "Description": "Most notably used during the Vietnam war to help U.S. Army units break through fortified positions and overrun the enemy. These tried and true armored troop carriers come in great condition and still function up to manufactuer standards.",
+      "priceList": "300000",
+      "featured": true,
+      "id": 2
     },
     {
-      "productId": "product013_1",
-      "productName": "Wall Light",
-      "size": "14 inches",
-      "brand": "Menlo Park",
-      "shortDescription": "High Old Silver by Troy Lighting",
-      "Description": "Wall Sconce",
-      "priceList": "265.6"
+      "category": "Air",
+      "imgLink": "./images/",
+      "productName": "",
+      "Description": "",
+      "priceList": "",
+      "featured": true,
+      "id": 3
     },
     {
-      "productId": "product014_1",
-      "productName": "Wall Light",
-      "size": "11 1/4 inches",
-      "brand": "Hinkley Congress",
-      "shortDescription": "High Clear Glass Chrome",
-      "Description": "Wall Sconce",
-      "priceList": "175.2"
-    },
-    {
-      "productId": "product015_1",
-      "productName": "Wall Light",
-      "size": "8 1/4 inches",
-      "brand": "Hudson Valley Barron",
-      "shortDescription": "H Polished Nickel Sconce",
-      "Description": "Wall Sconce",
-      "priceList": "315.2"
-    }
-    {
-      "productId": "product015_1",
-      "productName": "Wall Light",
-      "size": "8 1/4 inches",
-      "brand": "Hudson Valley Barron",
-      "shortDescription": "H Polished Nickel Sconce",
-      "Description": "Wall Sconce",
-      "priceList": "315.2"
+      "category": "Air",
+      "imgLink": "./images/",
+      "productName": "",
+      "Description": "",
+      "priceList": "",
+      "featured": true,
+      "id": 4
     }
   ],
+
   "Miscellaneous": [
     {
       "productId": "product030_1",
