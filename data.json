@@ -3,7 +3,7 @@
     {
       "category": "Firearm",
       "imgLink": "./images/Sig_Sauer_M4.jpg",
-      "productName": "Sig Sauer M4",
+      "productName": "Sig Sauer M4 Rifle",
       "Description": "5.56 chambered semi-auto rifle.",
       "priceList": "1300.00",
       "featured": false
@@ -11,7 +11,7 @@
     {
         "category": "Firearm",
         "imgLink": "./images/M1_Garand.jpg",
-        "productName": "M1 Garand",
+        "productName": "M1 Garand Rifle",
         "Description": "7.62 chambered semi-auto rifle.",
         "priceList": "1500.00",
         "featured": false
@@ -23,15 +23,31 @@
         "Description": "Standard issue fighting/work knife used by USMC infantry during WWII.",
         "priceList": "130.00",
         "featured": true
-    }
+    },
     {
         "category": "Close Combat",
-        "imgLink": "./images/Ka-Bar_USMC_Knife.jpg",
-        "productName": "Ka-Bar USMC Knife",
-        "Description": "Standard issue fighting/work knife used by USMC infantry during WWII.",
-        "priceList": "130.00",
-        "featured": true
-    }   
+        "imgLink": "./images/Glock_Feldmesser_FM_78.jpg",
+        "productName": "Glock Feldmesser FM 78 Knife",
+        "Description": "Austrian knife designed and manufactured by Glock. Developed in close coordination with Austrian special forces.",
+        "priceList": "50.00",
+        "featured": true    
+    },
+    {
+        "category": "Explosives",
+        "imgLink": "./images/German_Stick_Grenade.jpg",
+        "productName": "German Stick Grenade",
+        "Description": "A prominent WWI and WWII German manufactured grenade that is a great piece for any collector. Fully functional.",
+        "priceList": "75.00",
+        "featured": true    
+    },
+    {
+        "category": "Explosives",
+        "imgLink": "./images/German_Pigeon_Grenade.jpg",
+        "productName": "German Pigeon Grenade",
+        "Description": "An extremely rare piece of German WWI equipment that was used in tandem with the Granatenwerfer 16 infantry mortar. Not functional.",
+        "priceList": "100.00",
+        "featured": true    
+    }
   ],
 
   "Vehicles": [
