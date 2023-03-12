@@ -2,6 +2,14 @@
 2 item in a category
 3 category total
 
+2 guns
+2 knives
+2 bombs
+
+2 ground
+2 air
+2 water
+
 JSON
 id:
 category:
