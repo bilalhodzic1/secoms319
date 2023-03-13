@@ -9,16 +9,18 @@ fetch("./data.json")
     console.log("error:" + err);
   });
 function appendData(data) {
-  let mainContainer = document.getElementById("myData");
+  let mainContainer = document.getElementById("featured_item");
   for (let product_type in data) {
     for (let element of data[product_type]) {
-      if (element[""] == `Ceiling Fan`) {
-        if (element["size"] == `65 inches`) {
-          let div2 = document.createElement("div");
-          div2.innerHTML = `${element["productId"]} : ${element["shortDescription"]} <br>`;
-          mainContainer.appendChild(div2);
-        }
+      if (element["featured"] == true) {
+        let div = document.createElement("div");
+        div.className = `catalog_item`;
+        div.innerHTML = `<img class="product_img" src="${element["imgLink"]}" alt="${element["product_name"]}" />
+        <h2 class="product_name">${element["productName"]}</h2>
+        <p class="product_description">${element["Description"]}</p>
+        <p class="product_price">$${element["priceList"]}</p>`;
+        mainContainer.appendChild(div);
       }
     }
-  } // end of for
+  }
 }
