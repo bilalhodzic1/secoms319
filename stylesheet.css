@@ -3,35 +3,43 @@
   margin: 0;
   padding: 0px;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(197, 174, 82);
   position: fixed;
   top: 70px;
+  left: 0;
   width: 100%;
 }
-.navbar {
+header {
+  width: 100%;
+  margin: 0px;
+
   display: flex;
+}
+.navbar {
   line-height: 0.5;
 }
 .title {
   margin: 0;
   padding: 0px;
   overflow: hidden;
-  background-color: rgb(211, 199, 118);
+  background-color: #eae3c9;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   text-align: center;
   font-size: large;
   font-family: Impact, sans-serif;
+  border-bottom: 1px black;
 }
 .navbar li {
   float: left;
-  border-right: 1px solid #bbb;
+  border-right: 1px solid rgb(0, 0, 0);
 }
 
 .navbar li a {
   display: block;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -41,12 +49,13 @@
   background-color: #111;
 }
 .navbar .active {
-  background-color: #04aa6d;
+  background-color: #e7e9a9;
 }
 .navbar li:last-child {
   border-right: none;
 }
 main {
+  padding-top: 100px;
   padding-top: 100px;
   text-align: center;
 }
@@ -57,7 +66,7 @@ main {
   justify-content: start;
   width: 100%;
   padding-right: 15px;
-  padding-left: 15px;
+  left: 0;
   margin-right: auto;
   margin-left: auto;
 }
@@ -68,4 +77,9 @@ main {
 .product_img {
   height: auto;
   width: 300px;
+}
+body {
+  background-color: #eae3c9;
+}
+#featured_item {
 }
