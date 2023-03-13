@@ -8,6 +8,8 @@
   top: 80px;
   left: 0;
   width: 100%;
+  border-bottom: solid;
+  border-width: 5px;
 }
 header {
   width: 100%;
