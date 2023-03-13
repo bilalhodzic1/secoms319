@@ -83,3 +83,8 @@ body {
   display: grid;
   justify-content: center;
 }
+.filters {
+  border-style: solid;
+  border-color: #111;
+  text-align: left;
+}

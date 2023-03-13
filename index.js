@@ -14,7 +14,7 @@ function appendData(data) {
     for (let element of data[product_type]) {
       if (element["featured"] == true) {
         let div = document.createElement("div");
-        div.className = `catalog_item`;
+        div.className = `featured_item`;
         div.innerHTML = `<img class="featured_img" src="${element["imgLink"]}" alt="${element["product_name"]}" />
         <h2 class="featured_name">${element["productName"]}</h2>
         <p class="featured_description">${element["Description"]}</p>
