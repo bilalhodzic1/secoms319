@@ -12,7 +12,6 @@
 header {
   width: 100%;
   margin: 0px;
-
   display: flex;
 }
 .navbar {
@@ -61,7 +60,7 @@ main {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
-  gap: 10px 75px;
+  gap: 60px 75px;
   width: 100%;
   padding-top: 2%;
   padding-right: 15px;
@@ -71,10 +70,17 @@ main {
 }
 .catalog_item {
   width: 300px;
+  border-style: solid;
+  background-color: rgb(197, 174, 82);
 }
 .product_img {
   height: auto;
   width: 300px;
+  border-bottom: solid;
+  justify-self: start;
+}
+.product_price {
+  font-weight: bolder;
 }
 body {
   background-color: #eae3c9;
