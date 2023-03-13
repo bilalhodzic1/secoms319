@@ -62,7 +62,8 @@ main {
 #main_catalog {
   display: grid;
   grid-template-columns: auto auto auto;
-  justify-content: start;
+  justify-content: center;
+  gap: 10px 75px;
   width: 100%;
   padding-right: 15px;
   left: 0;
@@ -70,6 +71,7 @@ main {
   margin-left: auto;
 }
 .catalog_item {
+  width: 300px;
 }
 .product_img {
   height: auto;
@@ -79,4 +81,6 @@ body {
   background-color: #eae3c9;
 }
 #featured_item {
+  display: grid;
+  justify-content: center;
 }
