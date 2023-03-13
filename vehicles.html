@@ -22,17 +22,19 @@
       </div>
     </header>
     <main>
-      <form class="filters" onsubmit="storeSmtn()">
-        <label>All</label>
-        <input type="radio" id="all_selector" name="filter" />
-        <label>Land</label>
-        <input type="radio" id="land_selector" name="filter" />
-        <label>Air</label>
-        <input type="radio" id="air_selector" name="filter" />
-        <label>Sea</label>
-        <input type="radio" id="sea_selector" name="filter" />
-        <input type="submit" name="submit" />
-      </form>
+      <div class="filters">
+        <form onsubmit="storeSmtn()">
+          <label>All</label>
+          <input type="radio" id="all_selector" name="filter" />
+          <label>Land</label>
+          <input type="radio" id="land_selector" name="filter" />
+          <label>Air</label>
+          <input type="radio" id="air_selector" name="filter" />
+          <label>Sea</label>
+          <input type="radio" id="sea_selector" name="filter" />
+          <input type="submit" name="submit" />
+        </form>
+      </div class="filters">
       <div id="main_catalog"></div>
     </main>
     <script src="vehicle_fetch.js"></script>
