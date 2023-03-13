@@ -77,21 +77,39 @@
     },
     {
       "category": "Air",
-      "imgLink": "./images/",
-      "productName": "",
-      "Description": "",
-      "priceList": "",
+      "imgLink": "./images/UH-1_Huey.jpg",
+      "productName": "UH-1 Huey",
+      "Description": "Introduced in 1959 and thouroughly tried and tested during the Vietnam War, this recently retired helicopter now comes to customers fully functional and ready to fly. Whether your an avid flyer or veteran collecter this helicopter will not fail to please.",
+      "priceList": "960000",
       "featured": true,
       "id": 3
     },
     {
       "category": "Air",
-      "imgLink": "./images/",
-      "productName": "",
-      "Description": "",
-      "priceList": "",
+      "imgLink": "./images/AH-64.jpg",
+      "productName": "AH-64 Apache",
+      "Description": "The AH-64 Apache, produced by Boeing, is one of the most reliable and deadly helicopters in use by the U.S. military today. Through lucky overstock and trade deals, Saya's Emporium has been able to acquire fully operational AH-64's for our customers.",
+      "priceList": "52000000",
       "featured": true,
       "id": 4
+    },
+    {
+      "category": "Sea",
+      "imgLink": "./images/Arleigh_Burke_Destroyer.jpg",
+      "productName": "Arleigh Burke-class Aegis guided missile destroyer",
+      "Description": "The Arleigh Burke-class Aegis guided missile destroyer is the U.S Navy's leading blue water fighting ship. Numerous navy's around the world have modeled their ships around the Arleigh Burke. Just as our unfortunately closed sister company, Saya's Armory, sold Arleigh Burke-class destroyers, we intend to follow tradition and provide our loyal customers with a way to purchase this customer favorite product. Fully operational. Munitions not included.",
+      "priceList": "1843000000",
+      "featured": true,
+      "id": 5
+    },
+    {
+      "category": "Sea",
+      "imgLink": "./images/Skjold-class_Corvette.jpg",
+      "productName": "Skjold-class corvette",
+      "Description": "Utilized by the Norwegian Navy, the Skjold-class corvette is heavily armed with missles and ballistics for any self defense purposes.",
+      "priceList": "27000000",
+      "featured": true,
+      "id": 6
     }
   ],
 
