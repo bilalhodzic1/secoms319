@@ -4,7 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./stylesheet.css" rel="stylesheet" />
     <title>Vehicles for sale</title>
   </head>
-  <body></body>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="weaponry.html">Weaponry</a></li>
+        <li><a class="active" href="vehicles.html">Vehicles</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <form class="filters" onsubmit="storeSmtn()">
+      <label>All</label>
+      <input type="radio" id="all_selector" name="filter" />
+      <label>Land</label>
+      <input type="radio" id="land_selector" name="filter" />
+      <label>Air</label>
+      <input type="radio" id="air_selector" name="filter" />
+      <label>Sea</label>
+      <input type="radio" id="sea_selector" name="filter" />
+      <input type="submit" name="submit" />
+    </form>
+    <div id="main_catalog"></div>
+    <script src="vehicle_fetch.js"></script>
+  </body>
 </html>

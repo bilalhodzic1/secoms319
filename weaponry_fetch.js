@@ -14,7 +14,23 @@ function appendData(data) {
     if (product_type == `Weapons`) {
       for (let element of data[product_type]) {
         if (
-          localStorage.getItem(`firearm`) &&
+          !(
+            localStorage.getItem(`firearm`) == `true` ||
+            localStorage.getItem(`melee`) == `true` ||
+            localStorage.getItem(`explosive`) == `true`
+          )
+        ) {
+          let div = document.createElement("div");
+          div.className = `catalog_item`;
+          div.innerHTML = `<img class="product_img" src="${element["imgLink"]}" alt="${element["product_name"]}" />
+        <h2 class="product_name">${element["productName"]}</h2>
+        <p class="product_description">${element["Description"]}</p>
+        <p class="product_price">$${element["priceList"]}</p>`;
+
+          mainContainer.appendChild(div);
+        }
+        if (
+          localStorage.getItem(`firearm`) == `true` &&
           element["category"] == `Firearm`
         ) {
           let div = document.createElement("div");
@@ -23,11 +39,11 @@ function appendData(data) {
         <h2 class="product_name">${element["productName"]}</h2>
         <p class="product_description">${element["Description"]}</p>
         <p class="product_price">$${element["priceList"]}</p>`;
-          console.log(mainContainer);
+
           mainContainer.appendChild(div);
         }
         if (
-          localStorage.getItem(`melee`) &&
+          localStorage.getItem(`melee`) == `true` &&
           element["category"] == `Close Combat`
         ) {
           let div = document.createElement("div");
@@ -36,11 +52,12 @@ function appendData(data) {
         <h2 class="product_name">${element["productName"]}</h2>
         <p class="product_description">${element["Description"]}</p>
         <p class="product_price">$${element["priceList"]}</p>`;
-          console.log(mainContainer);
+
           mainContainer.appendChild(div);
         }
+
         if (
-          localStorage.getItem(`explosive`) &&
+          localStorage.getItem(`explosive`) == `true` &&
           element["category"] == `Explosives`
         ) {
           let div = document.createElement("div");
@@ -49,7 +66,6 @@ function appendData(data) {
         <h2 class="product_name">${element["productName"]}</h2>
         <p class="product_description">${element["Description"]}</p>
         <p class="product_price">$${element["priceList"]}</p>`;
-          console.log(mainContainer);
           mainContainer.appendChild(div);
         }
         if (
@@ -60,7 +76,7 @@ function appendData(data) {
         }
         if (
           element["id"] == data[product_type].length &&
-          localStorage.getItem(`meleet`)
+          localStorage.getItem(`melee`)
         ) {
           localStorage.removeItem(`melee`);
         }
@@ -81,5 +97,4 @@ function storeSmtn() {
   localStorage.setItem(`firearm`, firearmTrue.checked);
   localStorage.setItem(`melee`, meleeTrue.checked);
   localStorage.setItem(`explosive`, explosiveTrue.checked);
-  console.log("HEllo");
 }

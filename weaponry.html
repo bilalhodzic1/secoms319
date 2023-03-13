@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./stylesheet.css" rel="stylesheet" />
     <title>Weaponry for sale</title>
   </head>
   <body>
-    <form onsubmit="storeSmtn()">
+    <div class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="weaponry.html">Weaponry</a></li>
+        <li><a href="vehicles.html">Vehicles</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <form class="filters" onsubmit="storeSmtn()">
+      <label>All</label>
+      <input type="radio" id="all_selector" name="filter" />
       <label>Firearms</label>
-      <input type="radio" id="firearm_selector" name="filter" checked />
+      <input type="radio" id="firearm_selector" name="filter" />
       <label>close combat</label>
       <input type="radio" id="close_combat_selector" name="filter" />
       <label>Explosives</label>
