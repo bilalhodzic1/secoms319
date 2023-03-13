@@ -15,10 +15,10 @@ function appendData(data) {
       if (element["featured"] == true) {
         let div = document.createElement("div");
         div.className = `catalog_item`;
-        div.innerHTML = `<img class="product_img" src="${element["imgLink"]}" alt="${element["product_name"]}" />
-        <h2 class="product_name">${element["productName"]}</h2>
-        <p class="product_description">${element["Description"]}</p>
-        <p class="product_price">$${element["priceList"]}</p>`;
+        div.innerHTML = `<img class="featured_img" src="${element["imgLink"]}" alt="${element["product_name"]}" />
+        <h2 class="featured_name">${element["productName"]}</h2>
+        <p class="featured_description">${element["Description"]}</p>
+        <p class="featured_price">$${element["priceList"]}</p>`;
         mainContainer.appendChild(div);
       }
     }
