@@ -47,7 +47,8 @@
   border-right: none;
 }
 main {
-  padding-top: 70px;
+  padding-top: 100px;
+  text-align: center;
 }
 
 #main_catalog {
@@ -65,8 +66,6 @@ main {
   width: 33%;
 }
 .product_img {
+  height: auto;
   width: 300px;
-}
-
-#featured_item {
 }
