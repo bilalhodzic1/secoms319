@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 const ChemicalShop = () => {
   const [cart, setCart] = useState([]);
   const [filter, setFilter] = useState("");
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([
+    { id: "", title: "", price: "", description: "", imgLink: "" },
+  ]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -16,6 +18,6 @@ const ChemicalShop = () => {
       console.log("error", error);
     }
   };
-  return;
+  return <div></div>;
 };
 export default ChemicalShop;
