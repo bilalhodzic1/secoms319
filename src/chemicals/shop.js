@@ -56,7 +56,7 @@ const ChemicalShop = () => {
             <form action="/action_page.php">
               <input type="text" placeholder="Search.." name="search"></input>
               <button type="submit">
-                <i class="fa fa-search"></i>
+                <i class="fa fa-search">Submit</i>
               </button>
             </form>
           </div>
