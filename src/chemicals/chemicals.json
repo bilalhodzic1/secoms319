@@ -1,46 +1,46 @@
 {
   "Chemicals": [
     {
+      "id": 1,
       "title": "Sodium Bicarbonate",
       "price": "12",
       "description": "Sodium Bicarbonate is a chemical compound with the formula NaHCO₃. It is a salt composed of a sodium cation and a bicarbonate anion. Sodium bicarbonate is a white solid that is crystalline, but often appears as a fine powder.",
-      "imgLink": "",
-      "id": 1
+      "imgLink": ""
     },
     {
+      "id": 2,
       "title": "Silicon dioxide",
       "price": "32",
       "description": "Silicon dioxide, also known as silica, is an oxide of silicon with the chemical formula SiO₂, most commonly found in nature as quartz. In many parts of the world, silica is the major constituent of sand.",
-      "imgLink": "",
-      "id": 2
+      "imgLink": ""
     },
     {
+      "id": 3,
       "title": "Calcium carbonate",
       "price": "",
       "description": "",
-      "imgLink": "",
-      "id": 3
+      "imgLink": ""
     },
     {
+      "id": 4,
       "title": "Magnesium hydroxide",
       "price": "",
       "description": "",
-      "imgLink": "",
-      "id": 4
+      "imgLink": ""
     },
     {
+      "id": 5,
       "title": "Chloroform",
       "price": "",
       "description": "",
-      "imgLink": "",
-      "id": 5
+      "imgLink": ""
     },
     {
+      "id": 6,
       "title": "Zinc sulfate",
       "price": "",
       "description": "",
-      "imgLink": "",
-      "id": 6
+      "imgLink": ""
     }
   ]
 }
