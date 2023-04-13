@@ -4,17 +4,30 @@ const ChemicalShop = () => {
   const [cart, setCart] = useState([]);
   const [listItems, setListItems] = useState();
   const [filter, setFilter] = useState("");
+  const [cartCount, setCartCount] = useState(0);
+  const [currState, setCurrState] = useState(0);
   useEffect(() => {
     makeList();
   }, [filter]);
+  useEffect(() => {
+    makeList();
+  }, [cart]);
   const addToCart = (product) => {
     setCart([...cart, product]);
+    setCartCount(cartCount + 1);
   };
   const removeFromCart = (product) => {
     let hardCopy = [...cart];
     hardCopy = hardCopy.filter((cartItem) => cartItem.id !== product.id);
     setCart(hardCopy);
+    setCartCount(cartCount - 1);
   };
+  const cartItems = cart.map((product) => (
+    <div key={product.id}>
+      <img src={product.imgLink} />
+      {product.title}${product.price}
+    </div>
+  ));
   const makeList = () => {
     let copyList = new Array();
     let copyCount = 0;
