@@ -169,15 +169,15 @@ const ChemicalShop = () => {
         </div>
         <div>
           <form>
-            <input type="text"></input>
-            <input type="text"></input>
-            <input type="text"></input>
-            <input type="text"></input>
-            <input type="text"></input>
-            <input type="text"></input>
-            <input type="text"></input>
-            <input type="submit"></input>
+            <input type="text" id="fullname"></input>
+            <input type="text" id="email"></input>
+            <input type="text" id="card"></input>
+            <input type="text" id="address"></input>
+            <input type="text" id="city"></input>
+            <input type="text" id="state"></input>
+            <input type="text" id="zip"></input>
           </form>
+          <button>Submit</button>
         </div>
       </div>
     );
