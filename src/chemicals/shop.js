@@ -30,7 +30,6 @@ const ChemicalShop = () => {
         }
       }
     }
-    console.log(copyList);
     setListItems(
       copyList.map((product) => (
         <div key={product.id}>
