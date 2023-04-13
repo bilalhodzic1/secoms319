@@ -171,19 +171,19 @@ const ChemicalShop = () => {
         <div>
           <form>
             <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname"></input>
+            <input type="text" id="fullname" required></input>
             <label for="email">Email:</label>
-            <input type="text" id="email"></input>
+            <input type="email" id="email" required></input>
             <label for="card">Card:</label>
-            <input type="text" id="card"></input>
+            <input type="text" id="card" required></input>
             <label for="address">Address:</label>
-            <input type="text" id="address"></input>
+            <input type="text" id="address" required></input>
             <label for="city">City:</label>
-            <input type="text" id="city"></input>
+            <input type="text" id="city" required></input>
             <label for="state">State:</label>
-            <input type="text" id="state"></input>
+            <input type="text" id="state" required></input>
             <label for="zip">Zip:</label>
-            <input type="text" id="zip"></input>
+            <input type="text" id="zip" required maxLength={5}></input>
           </form>
         </div>
       </div>
