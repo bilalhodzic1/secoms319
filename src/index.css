@@ -49,8 +49,8 @@ h1 {
   font-size: 16px;
 }
 
-.topnav #checkout button:hover {
-  background-color: aqua;
+.topnav #checkout:hover {
+  background-color: darkgreen;
   border: none;
   color: white;
   padding: 15px 32px;
