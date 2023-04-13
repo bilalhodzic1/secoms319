@@ -63,9 +63,7 @@ const ChemicalShop = () => {
     for (let i in items) {
       let oldval = copyCount;
       for (let obj in items[i]) {
-        for (let cartCheck in cart) {
-        }
-        if (items[i]["id"]) {
+        if (howMany(items[i]["id"]) != 0) {
           if (oldval === copyCount) {
             copyCount++;
             copyList[oldval] = {};
@@ -74,6 +72,7 @@ const ChemicalShop = () => {
         }
       }
     }
+    console.log(copyList);
   };
   const makeList = () => {
     let copyList = [];
@@ -171,15 +170,15 @@ const ChemicalShop = () => {
         </div>
         <div>
           <form>
-            <input type="text" id="fullname"></input>
-            <input type="text" id="email"></input>
-            <input type="text" id="card"></input>
-            <input type="text" id="address"></input>
-            <input type="text" id="city"></input>
-            <input type="text" id="state"></input>
-            <input type="text" id="zip"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="submit"></input>
           </form>
-          <button>Submit</button>
         </div>
       </div>
     );
