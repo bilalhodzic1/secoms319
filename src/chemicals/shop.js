@@ -138,11 +138,13 @@ const ChemicalShop = () => {
               <img src={product.imgLink} />
             </div>
             <div>
-              <div>{product.title}</div>
+              <div>
+                <strong>{product.title}</strong>
+              </div>
               <div>{product.description}</div>
             </div>
             <div>
-              <div>{product.price}</div>
+              <div>${product.price}</div>
               <button
                 type="button"
                 variant="light"
@@ -210,11 +212,13 @@ const ChemicalShop = () => {
               Return
             </button>
           </div>
+          <h2 id="cart">Current Cart:</h2>
           <div class="grid-container">{cartItems}</div>
-          <div id="totalprice">Total: ${cartTotal}</div>
+          <div class="totalprice">Total: ${cartTotal}</div>
         </div>
         <div>
           <form id="payinfo">
+            <h2>Payment Info</h2>
             <label for="fullname">Full Name: </label>
             <input
               required
@@ -238,6 +242,7 @@ const ChemicalShop = () => {
             <br></br>
             <label for="card">Card: </label>
             <input
+              maxLength={16}
               required
               type="text"
               id="card"
@@ -316,7 +321,7 @@ const ChemicalShop = () => {
             </button>
           </div>
           <div class="grid-container">{orderItems}</div>
-          <div>Total: ${cartTotal}</div>
+          <div class="totalprice">Total: ${cartTotal}</div>
           <div>{fullName}</div>
           <div>{email}</div>
           <div>{card}</div>
