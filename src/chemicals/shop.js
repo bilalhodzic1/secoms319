@@ -6,12 +6,26 @@ const ChemicalShop = () => {
   const [filter, setFilter] = useState("");
   const [cartCount, setCartCount] = useState(0);
   const [currState, setCurrState] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
   useEffect(() => {
     makeList();
   }, [filter]);
   useEffect(() => {
     makeList();
+    total();
   }, [cart]);
+  const total = () => {
+    let totalVal = 0;
+    for (let i = 0; i < cart.length; i++) {
+      totalVal += cart[i].price;
+    }
+    totalVal = totalVal * 1.07;
+    setCartTotal(totalVal);
+  };
+  function howMany(id) {
+    let hm = cart.filter((cartItem) => cartItem.id === id);
+    return hm.length;
+  }
   const checkoutTime = () => {
     setCurrState(1);
   };
@@ -31,7 +45,7 @@ const ChemicalShop = () => {
   const cartItems = cart.map((product) => (
     <div key={product.id}>
       <img src={product.imgLink} />
-      {product.title}${product.price}
+      {product.title}
     </div>
   ));
   const makeList = () => {
@@ -40,7 +54,10 @@ const ChemicalShop = () => {
     for (let i in items) {
       let oldval = copyCount;
       for (let obj in items[i]) {
-        if (items[i]["title"].includes(filter) || filter === "") {
+        if (
+          items[i]["title"].toLowerCase().includes(filter.toLowerCase()) ||
+          filter === ""
+        ) {
           if (oldval === copyCount) {
             copyCount++;
             copyList[oldval] = {};
@@ -79,7 +96,7 @@ const ChemicalShop = () => {
                 +{" "}
               </button>
             </div>
-            <div></div>
+            <div>Quantity ordered: {howMany(product.id)}</div>
           </div>
         </div>
       ))
@@ -121,21 +138,11 @@ const ChemicalShop = () => {
             <button type="button" onClick={() => returnTime()} id="checkout">
               Return
             </button>
-            <div class="search-container">
-              <form action="/action_page.php">
-                <input
-                  type="text"
-                  placeholder="Search.."
-                  name="search"
-                  onChange={(e) => {
-                    setFilter(e.target.value);
-                    console.log(e.target.value);
-                  }}
-                ></input>
-              </form>
-            </div>
           </div>
-          <div class="grid-container">{cartItems}</div>
+          <div class="grid-container">
+            {cartItems}
+            <div>{cartTotal}</div>
+          </div>
         </div>
       </div>
     );
