@@ -42,6 +42,7 @@ const ChemicalShop = () => {
               <div>{product.description}</div>
             </div>
             <div>
+              <div>{product.price}</div>
               <button
                 type="button"
                 variant="light"
@@ -70,9 +71,9 @@ const ChemicalShop = () => {
       <div>
         <h1>Saya's Chemicals</h1>
         <div class="topnav">
-          <a class="active" href="#home">
-            Home
-          </a>
+          <button type="button" id="checkout">
+            Checkout
+          </button>
           <div class="search-container">
             <form action="/action_page.php">
               <input
@@ -85,14 +86,13 @@ const ChemicalShop = () => {
                 }}
               ></input>
               <button type="submit">
-                <i class="fa fa-search">Submit</i>
+                <i>Submit</i>
               </button>
             </form>
           </div>
         </div>
         <div class="grid-container">{listItems}</div>
       </div>
-      <button type="button">Checkout</button>
     </div>
   );
 };
