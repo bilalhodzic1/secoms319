@@ -290,7 +290,7 @@ const ChemicalShop = () => {
             </button>
           </div>
           <div class="grid-container">{orderItems}</div>
-          <div>{cartTotal}</div>
+          <div>Total: ${cartTotal}</div>
           <div>{fullName}</div>
           <div>{email}</div>
           <div>{card}</div>
