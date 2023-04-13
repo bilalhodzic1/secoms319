@@ -17,7 +17,6 @@ const ChemicalShop = () => {
     setCart(hardCopy);
   };
   const makeList = () => {
-    
     setListItems(
       items.map((product) => (
         <div key={product.id}>
@@ -72,6 +71,7 @@ const ChemicalShop = () => {
         </div>
         <div class="grid-container">{listItems}</div>
       </div>
+      <button type="button">Checkout</button>
     </div>
   );
 };

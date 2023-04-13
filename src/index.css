@@ -83,3 +83,7 @@ h1 {
 .topnav .search-container button:hover {
   background: #ccc;
 }
+
+img {
+  width: 300pt;
+}
