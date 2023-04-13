@@ -12,6 +12,12 @@ const ChemicalShop = () => {
   useEffect(() => {
     makeList();
   }, [cart]);
+  const checkoutTime = () => {
+    setCurrState(1);
+  };
+  const returnTime = () => {
+    setCurrState(0);
+  };
   const addToCart = (product) => {
     setCart([...cart, product]);
     setCartCount(cartCount + 1);
@@ -79,31 +85,60 @@ const ChemicalShop = () => {
       ))
     );
   };
-  return (
-    <div>
+  if (currState === 0) {
+    return (
       <div>
-        <h1>Saya's Chemicals</h1>
-        <div class="topnav">
-          <button type="button" id="checkout">
-            Checkout
-          </button>
-          <div class="search-container">
-            <form action="/action_page.php">
-              <input
-                type="text"
-                placeholder="Search.."
-                name="search"
-                onChange={(e) => {
-                  setFilter(e.target.value);
-                  console.log(e.target.value);
-                }}
-              ></input>
-            </form>
+        <div>
+          <h1>Saya's Chemicals</h1>
+          <div class="topnav">
+            <button type="button" onClick={() => checkoutTime()} id="checkout">
+              Checkout
+            </button>
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input
+                  type="text"
+                  placeholder="Search.."
+                  name="search"
+                  onChange={(e) => {
+                    setFilter(e.target.value);
+                    console.log(e.target.value);
+                  }}
+                ></input>
+              </form>
+            </div>
           </div>
+          <div class="grid-container">{listItems}</div>
         </div>
-        <div class="grid-container">{listItems}</div>
       </div>
-    </div>
-  );
+    );
+  } else if (currState === 1) {
+    return (
+      <div>
+        <div>
+          <h1>Saya's Chemicals</h1>
+          <div class="topnav">
+            <button type="button" onClick={() => returnTime()} id="checkout">
+              Return
+            </button>
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input
+                  type="text"
+                  placeholder="Search.."
+                  name="search"
+                  onChange={(e) => {
+                    setFilter(e.target.value);
+                    console.log(e.target.value);
+                  }}
+                ></input>
+              </form>
+            </div>
+          </div>
+          <div class="grid-container">{cartItems}</div>
+        </div>
+      </div>
+    );
+  }
 };
 export default ChemicalShop;
