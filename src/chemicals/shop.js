@@ -8,6 +8,7 @@ const ChemicalShop = () => {
   const [currState, setCurrState] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
   const [userInfo, setUserInfo] = useState([]);
+  const [orderItems, setOrderItems] = useState([]);
   useEffect(() => {
     makeList();
   }, [filter]);
@@ -56,6 +57,22 @@ const ChemicalShop = () => {
       {product.title}
     </div>
   ));
+  const makeOrderlist = () => {
+    let copyList = [];
+    let copyCount = 0;
+    for (let i in items) {
+      let oldval = copyCount;
+      for (let obj in items[i]) {
+        if (items[i]["id"]) {
+          if (oldval === copyCount) {
+            copyCount++;
+            copyList[oldval] = {};
+          }
+          copyList[oldval][obj] = items[i][obj];
+        }
+      }
+    }
+  };
   const makeList = () => {
     let copyList = [];
     let copyCount = 0;
