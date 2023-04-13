@@ -181,20 +181,23 @@ const ChemicalShop = () => {
             </button>
           </div>
           <div class="grid-container">{cartItems}</div>
-          <div>{cartTotal}</div>
+          <div id="totalprice">Total: ${cartTotal}</div>
         </div>
         <div>
-          <form>
-            <label for="fullname">Full Name:</label>
+          <form id="payinfo">
+            <label for="fullname">Full Name: </label>
             <input
+              required
               type="text"
               id="fullname"
               onChange={(e) => {
                 setFullName(e.target.value);
               }}
             ></input>
-            <label for="email">Email:</label>
+            <br></br>
+            <label for="email">Email: </label>
             <input
+              required
               type="text"
               id="email"
               onChange={(e) => {
@@ -202,8 +205,10 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <label for="card">Card:</label>
+            <br></br>
+            <label for="card">Card: </label>
             <input
+              required
               type="text"
               id="card"
               onChange={(e) => {
@@ -211,8 +216,10 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <label for="address">Address:</label>
+            <br></br>
+            <label for="address">Address: </label>
             <input
+              required
               type="text"
               id="address"
               onChange={(e) => {
@@ -220,8 +227,10 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <label for="city">City:</label>
+            <br></br>
+            <label for="city">City: </label>
             <input
+              required
               type="text"
               id="city"
               onChange={(e) => {
@@ -229,8 +238,10 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <label for="state">State:</label>
+            <br></br>
+            <label for="state">State: </label>
             <input
+              required
               type="text"
               id="state"
               onChange={(e) => {
@@ -238,8 +249,11 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <label for="zip">Zip:</label>
+            <br></br>
+            <label for="zip">Zip: </label>
             <input
+              required
+              maxLength={5}
               type="text"
               id="zip"
               onChange={(e) => {
