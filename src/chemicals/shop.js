@@ -4,10 +4,9 @@ const ChemicalShop = () => {
   const [cart, setCart] = useState([]);
   const [listItems, setListItems] = useState();
   const [filter, setFilter] = useState("");
-  const [products, setProducts] = useState([]);
   useEffect(() => {
     makeList();
-  }, []);
+  }, [filter]);
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -17,9 +16,23 @@ const ChemicalShop = () => {
     setCart(hardCopy);
   };
   const makeList = () => {
-    
+    let copyList = new Array();
+    let copyCount = 0;
+    for (let i in items) {
+      let oldval = copyCount;
+      for (let obj in items[i]) {
+        if (items[i]["title"].includes(filter) || filter === "") {
+          if (oldval === copyCount) {
+            copyCount++;
+            copyList[oldval] = {};
+          }
+          copyList[oldval][obj] = items[i][obj];
+        }
+      }
+    }
+    console.log(copyList);
     setListItems(
-      items.map((product) => (
+      copyList.map((product) => (
         <div key={product.id}>
           <div>
             <div>
@@ -63,7 +76,15 @@ const ChemicalShop = () => {
           </a>
           <div class="search-container">
             <form action="/action_page.php">
-              <input type="text" placeholder="Search.." name="search"></input>
+              <input
+                type="text"
+                placeholder="Search.."
+                name="search"
+                onChange={(e) => {
+                  setFilter(e.target.value);
+                  console.log(e.target.value);
+                }}
+              ></input>
               <button type="submit">
                 <i class="fa fa-search">Submit</i>
               </button>
