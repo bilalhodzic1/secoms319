@@ -185,19 +185,6 @@ const ChemicalShop = () => {
         <div>
           <form>
             <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" required></input>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required></input>
-            <label for="card">Card:</label>
-            <input type="text" id="card" required></input>
-            <label for="address">Address:</label>
-            <input type="text" id="address" required></input>
-            <label for="city">City:</label>
-            <input type="text" id="city" required></input>
-            <label for="state">State:</label>
-            <input type="text" id="state" required></input>
-            <label for="zip">Zip:</label>
-            <input type="text" id="zip" required maxLength={5}></input>
             <input
               type="text"
               id="fullname"
@@ -214,7 +201,6 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <input type="email" id="email" required></input>
             <label for="card">Card:</label>
             <input
               type="text"
@@ -224,7 +210,6 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <input type="text" id="card" required></input>
             <label for="address">Address:</label>
             <input
               type="text"
@@ -234,7 +219,6 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <input type="text" id="address" required></input>
             <label for="city">City:</label>
             <input
               type="text"
@@ -244,7 +228,6 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <input type="text" id="city" required></input>
             <label for="state">State:</label>
             <input
               type="text"
@@ -254,7 +237,6 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <input type="text" id="state" required></input>
             <label for="zip">Zip:</label>
             <input
               type="text"
@@ -264,7 +246,6 @@ const ChemicalShop = () => {
                 console.log(e.target.value);
               }}
             ></input>
-            <input type="text" id="zip" required maxLength={5}></input>
           </form>
           <button
             type="button"
