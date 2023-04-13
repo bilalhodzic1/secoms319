@@ -63,6 +63,8 @@ const ChemicalShop = () => {
     for (let i in items) {
       let oldval = copyCount;
       for (let obj in items[i]) {
+        for (let cartCheck in cart) {
+        }
         if (items[i]["id"]) {
           if (oldval === copyCount) {
             copyCount++;
