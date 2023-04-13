@@ -7,6 +7,7 @@ const ChemicalShop = () => {
   const [cartCount, setCartCount] = useState(0);
   const [currState, setCurrState] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
+  const [userInfo, setUserInfo] = useState([]);
   useEffect(() => {
     makeList();
   }, [filter]);
@@ -21,6 +22,13 @@ const ChemicalShop = () => {
     }
     totalVal = totalVal * 1.07;
     setCartTotal(totalVal);
+  };
+  const orderTime = () => {
+    setCurrState(2);
+  };
+  const browseTime = () => {
+    setCart([]);
+    setCurrState(0);
   };
   function howMany(id) {
     let hm = cart.filter((cartItem) => cartItem.id === id);
@@ -49,7 +57,7 @@ const ChemicalShop = () => {
     </div>
   ));
   const makeList = () => {
-    let copyList = new Array();
+    let copyList = [];
     let copyCount = 0;
     for (let i in items) {
       let oldval = copyCount;
@@ -139,10 +147,8 @@ const ChemicalShop = () => {
               Return
             </button>
           </div>
-          <div class="grid-container">
-            {cartItems}
-            <div>{cartTotal}</div>
-          </div>
+          <div class="grid-container">{cartItems}</div>
+          <div>{cartTotal}</div>
         </div>
         <div>
           <form>
@@ -158,6 +164,19 @@ const ChemicalShop = () => {
         </div>
       </div>
     );
+  } else {
+    <div>
+      <div>
+        <h1>Saya's Chemicals</h1>
+        <div class="topnav">
+          <button type="button" onClick={() => browseTime()} id="checkout">
+            Back to browse
+          </button>
+        </div>
+        <div class="grid-container">{cartItems}</div>
+        <div>{cartTotal}</div>
+      </div>
+    </div>;
   }
 };
 export default ChemicalShop;
