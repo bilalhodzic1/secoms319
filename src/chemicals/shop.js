@@ -144,6 +144,18 @@ const ChemicalShop = () => {
             <div>{cartTotal}</div>
           </div>
         </div>
+        <div>
+          <form>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="text"></input>
+            <input type="submit"></input>
+          </form>
+        </div>
       </div>
     );
   }
