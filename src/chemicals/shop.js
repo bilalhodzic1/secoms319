@@ -42,6 +42,7 @@ const ChemicalShop = () => {
     return hm.length;
   }
   const checkoutTime = () => {
+    setFilter("");
     setCurrState(1);
   };
   const returnTime = () => {
@@ -260,7 +261,7 @@ const ChemicalShop = () => {
         </div>
       </div>
     );
-  } else if (currState == 2) {
+  } else if (currState === 2) {
     return (
       <div>
         <div>
