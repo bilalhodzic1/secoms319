@@ -7,8 +7,14 @@ const ChemicalShop = () => {
   const [cartCount, setCartCount] = useState(0);
   const [currState, setCurrState] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
-  const [userInfo, setUserInfo] = useState([]);
   const [orderItems, setOrderItems] = useState([]);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [card, setCard] = useState("");
+  const [Address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
   useEffect(() => {
     makeList();
   }, [filter]);
@@ -72,7 +78,15 @@ const ChemicalShop = () => {
         }
       }
     }
-    console.log(copyList);
+    setOrderItems(
+      copyList.map((product) => (
+        <div key={product.id}>
+          <img src={product.imgLink} />
+          {product.title}
+          <div>Quantity ordered: {howMany(product.id)}</div>
+        </div>
+      ))
+    );
   };
   const makeList = () => {
     let copyList = [];
@@ -171,36 +185,103 @@ const ChemicalShop = () => {
         <div>
           <form>
             <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname"></input>
+            <input
+              type="text"
+              id="fullname"
+              onChange={(e) => {
+                setFullName(e.target.value);
+              }}
+            ></input>
             <label for="email">Email:</label>
-            <input type="text" id="email"></input>
+            <input
+              type="text"
+              id="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+                console.log(e.target.value);
+              }}
+            ></input>
             <label for="card">Card:</label>
-            <input type="text" id="card"></input>
+            <input
+              type="text"
+              id="card"
+              onChange={(e) => {
+                setCard(e.target.value);
+                console.log(e.target.value);
+              }}
+            ></input>
             <label for="address">Address:</label>
-            <input type="text" id="address"></input>
+            <input
+              type="text"
+              id="address"
+              onChange={(e) => {
+                setAddress(e.target.value);
+                console.log(e.target.value);
+              }}
+            ></input>
             <label for="city">City:</label>
-            <input type="text" id="city"></input>
+            <input
+              type="text"
+              id="city"
+              onChange={(e) => {
+                setCity(e.target.value);
+                console.log(e.target.value);
+              }}
+            ></input>
             <label for="state">State:</label>
-            <input type="text" id="state"></input>
+            <input
+              type="text"
+              id="state"
+              onChange={(e) => {
+                setState(e.target.value);
+                console.log(e.target.value);
+              }}
+            ></input>
             <label for="zip">Zip:</label>
-            <input type="text" id="zip"></input>
+            <input
+              type="text"
+              id="zip"
+              onChange={(e) => {
+                setZip(e.target.value);
+                console.log(e.target.value);
+              }}
+            ></input>
           </form>
+          <button
+            type="button"
+            onClick={() => {
+              makeOrderlist();
+              orderTime();
+              makeList();
+            }}
+          >
+            Order
+          </button>
         </div>
       </div>
     );
-  } else {
-    <div>
+  } else if (currState == 2) {
+    return (
       <div>
-        <h1>Saya's Chemicals</h1>
-        <div class="topnav">
-          <button type="button" onClick={() => browseTime()} id="checkout">
-            Back to browse
-          </button>
+        <div>
+          <h1>Saya's Chemicals</h1>
+          <div class="topnav">
+            <button type="button" onClick={() => browseTime()} id="checkout">
+              Back to browse
+            </button>
+          </div>
+          <div class="grid-container">{orderItems}</div>
+          <div>{cartTotal}</div>
+          <div>{fullName}</div>
+          <div>{email}</div>
+          <div>{card}</div>
+          <div>{Address}</div>
+          <div>{city}</div>
+          <div>{state}</div>
+          <div>{zip}</div>
         </div>
-        <div class="grid-container">{cartItems}</div>
-        <div>{cartTotal}</div>
       </div>
-    </div>;
+    );
   }
 };
 export default ChemicalShop;
