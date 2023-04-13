@@ -85,9 +85,6 @@ const ChemicalShop = () => {
                   console.log(e.target.value);
                 }}
               ></input>
-              <button type="submit">
-                <i>Submit</i>
-              </button>
             </form>
           </div>
         </div>
