@@ -15,6 +15,7 @@ const ChemicalShop = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [zip, setZip] = useState("");
+  const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
     makeList();
   }, [filter]);
@@ -28,6 +29,7 @@ const ChemicalShop = () => {
       totalVal += cart[i].price;
     }
     totalVal = totalVal * 1.07;
+    totalVal = totalVal.toFixed(2);
     setCartTotal(totalVal);
   };
   const orderTime = () => {
@@ -58,12 +60,32 @@ const ChemicalShop = () => {
     setCart(hardCopy);
     setCartCount(cartCount - 1);
   };
-  const cartItems = cart.map((product) => (
-    <div key={product.id}>
-      <img src={product.imgLink} />
-      {product.title}
-    </div>
-  ));
+  const makeCartList = () => {
+    let copyList = [];
+    let copyCount = 0;
+    for (let i in items) {
+      let oldval = copyCount;
+      for (let obj in items[i]) {
+        if (howMany(items[i]["id"]) != 0) {
+          if (oldval === copyCount) {
+            copyCount++;
+            copyList[oldval] = {};
+          }
+          copyList[oldval][obj] = items[i][obj];
+        }
+      }
+    }
+    setCartItems(
+      copyList.map((product) => (
+        <div key={product.id}>
+          <img src={product.imgLink} />
+          <div>{product.title}</div>
+          <div>${product.price}</div>
+          <div>Quantity ordered: {howMany(product.id)}</div>
+        </div>
+      ))
+    );
+  };
   const makeOrderlist = () => {
     let copyList = [];
     let copyCount = 0;
@@ -83,7 +105,8 @@ const ChemicalShop = () => {
       copyList.map((product) => (
         <div key={product.id}>
           <img src={product.imgLink} />
-          {product.title}
+          <div>{product.title}</div>
+          <div>${product.price}</div>
           <div>Quantity ordered: {howMany(product.id)}</div>
         </div>
       ))
@@ -149,7 +172,14 @@ const ChemicalShop = () => {
         <div>
           <h1>Saya's Chemicals</h1>
           <div class="topnav">
-            <button type="button" onClick={() => checkoutTime()} id="checkout">
+            <button
+              type="button"
+              onClick={() => {
+                checkoutTime();
+                makeCartList();
+              }}
+              id="checkout"
+            >
               Checkout
             </button>
             <div class="search-container">
