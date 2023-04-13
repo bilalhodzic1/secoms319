@@ -169,12 +169,19 @@ const ChemicalShop = () => {
         </div>
         <div>
           <form>
+            <label for="fullname">Full Name:</label>
             <input type="text" id="fullname"></input>
+            <label for="email">Email:</label>
             <input type="text" id="email"></input>
+            <label for="card">Card:</label>
             <input type="text" id="card"></input>
+            <label for="address">Address:</label>
             <input type="text" id="address"></input>
+            <label for="city">City:</label>
             <input type="text" id="city"></input>
+            <label for="state">State:</label>
             <input type="text" id="state"></input>
+            <label for="zip">Zip:</label>
             <input type="text" id="zip"></input>
           </form>
           <button>Submit</button>
