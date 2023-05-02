@@ -241,7 +241,7 @@ function App() {
           </button>
         </div>
         <div class="header">
-          <h1>Saya's Catalog </h1>
+          <h1>Saya's Shoe Catalog </h1>
           <button onClick={() => getAllProducts()}>Show all Products</button>
           <h1>Show all Available Products:</h1>
         </div>
