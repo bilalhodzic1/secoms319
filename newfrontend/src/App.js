@@ -414,7 +414,17 @@ function App() {
             Info
           </button>
         </div>
+
         <div class="updateProduct">
+          <div>Search for product by id</div>
+          <input
+            type="text"
+            id="message"
+            name="message"
+            placeholder="id"
+            onChange={(e) => getOneProduct(e.target.value)}
+          />
+          {viewer2 && <div>Product: {showOneItem}</div>}
           <h3>Update a Product by Id :</h3>
           <form action="">
             <label for="_idupdate">Current ID? </label>
@@ -426,14 +436,7 @@ function App() {
               onChange={handleupdateChange}
             />
             <br></br>
-            <label for="titleupdate">New Title? </label>
-            <input
-              type="text"
-              placeholder="title?"
-              name="titleupdate"
-              value={updateProduct.title}
-              onChange={handleupdateChange}
-            />
+
             <br></br>
             <label for="priceupdate">New Price? </label>
             <input
@@ -441,51 +444,6 @@ function App() {
               placeholder="price?"
               name="priceupdate"
               value={updateProduct.price}
-              onChange={handleupdateChange}
-            />
-            <br></br>
-            <label for="desctiptionupdate">New Descripton? </label>
-            <input
-              type="text"
-              placeholder="description?"
-              name="descriptionupdate"
-              value={updateProduct.description}
-              onChange={handleupdateChange}
-            />
-            <br></br>
-            <label for="categoryupdate">New Category? </label>
-            <input
-              type="text"
-              placeholder="category?"
-              name="categoryupdate"
-              value={updateProduct.category}
-              onChange={handleupdateChange}
-            />
-            <br></br>
-            <label for="imageupdate">New Image Link? </label>
-            <input
-              type="text"
-              placeholder="image?"
-              name="imageupdate"
-              value={updateProduct.image}
-              onChange={handleupdateChange}
-            />
-            <br></br>
-            <label for="rateupdate">New Rate? </label>
-            <input
-              type="number"
-              placeholder="rate?"
-              name="rateupdate"
-              value={updateProduct.rating.rate}
-              onChange={handleupdateChange}
-            />
-            <br></br>
-            <label for="countupdate">New Count? </label>
-            <input
-              type="number"
-              placeholder="count?"
-              name="countupdate"
-              value={updateProduct.rating.count}
               onChange={handleupdateChange}
             />
             <br></br>

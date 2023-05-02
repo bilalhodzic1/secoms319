@@ -10,7 +10,7 @@ app.use("/images", express.static("images"));
 mongoose.connect(
   "mongodb+srv://bhodzic:K7yK07OZqhO9fSon@cluster52845.751uhbi.mongodb.net/?retryWrites=true&w=majority",
   {
-    dbName: "InClassData",
+    dbName: "reactdata",
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
@@ -84,23 +84,8 @@ app.post("/Update", async (req, res) => {
   try {
     const query = { _id: p_id };
     const toUpdate = await Product.findOne(query);
-    if (ptitle !== "notitle") {
-      toUpdate.title = ptitle;
-    }
     if (pprice !== -1) {
       toUpdate.price = pprice;
-    }
-    if (pdescription !== "nodesc") {
-      toUpdate.description = pdescription;
-    }
-    if (pcategory !== "nocat") {
-      toUpdate.category = pcategory;
-    }
-    if (pimage !== "http://127.0.0.1:4000/images/") {
-      toUpdate.image = pimage;
-    }
-    if (prate !== -1 && pcount !== -1) {
-      toUpdate.rating = { prate: pcount };
     }
     toUpdate.save();
     const messageResponse = {
