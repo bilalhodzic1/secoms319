@@ -25,6 +25,15 @@ function App() {
     image: "http://127.0.0.1:4000/images/",
     rating: { rate: 0.0, count: 0 },
   });
+  const [updateProduct, setupdateProduct] = useState({
+    _id: 0,
+    title: "notitle",
+    price: -1,
+    description: "nodesc",
+    category: "nocat",
+    image: "http://127.0.0.1:4000/images/",
+    rating: { rate: -1, count: -1 },
+  });
 
   const showAllItems = product.map((el) => (
     <div key={el._id} class="item">
@@ -97,6 +106,50 @@ function App() {
       });
     }
   }
+  function handleupdateChange(evt) {
+    const value = evt.target.value;
+    if (evt.target.name === "_idupdate") {
+      setupdateProduct({ ...updateProduct, _id: value });
+    } else if (evt.target.name === "titleupdate") {
+      setupdateProduct({ ...updateProduct, title: value });
+    } else if (evt.target.name === "priceupdate") {
+      setupdateProduct({ ...updateProduct, price: value });
+    } else if (evt.target.name === "descriptionupdate") {
+      setupdateProduct({ ...updateProduct, description: value });
+    } else if (evt.target.name === "categoryupdate") {
+      setupdateProduct({ ...updateProduct, category: value });
+    } else if (evt.target.name === "imageupdate") {
+      const temp = value;
+      setupdateProduct({ ...updateProduct, image: temp });
+    } else if (evt.target.name === "rateupdate") {
+      setupdateProduct({ ...updateProduct, rating: { rate: value } });
+    } else if (evt.target.name === "countupdate") {
+      const temp = updateProduct.rating.rate;
+      setupdateProduct({
+        ...updateProduct,
+        rating: { rate: temp, count: value },
+      });
+    }
+  }
+  function handleupdateOnSubmit(e) {
+    e.preventDefault();
+    console.log(e.target.value);
+    fetch("http://localhost:4000/Update", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updateProduct),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Post a new product completed");
+        console.log(data);
+        if (data) {
+          //const keys = Object.keys(data);
+          const value = Object.values(data);
+          alert(value);
+        }
+      });
+  }
   function handleOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
@@ -156,25 +209,14 @@ function App() {
       <div class="header">
         <h1>Catalog of Products </h1>
         <button onClick={() => getAllProducts()}>Show All Products</button>
-        <input
-          type="text"
-          id="message"
-          name="message"
-          placeholder="id"
-          onChange={(e) => getOneProduct(e.target.value)}
-        />
         <h1>Show all Available Products:</h1>
       </div>
       <hr></hr>
       {viewer1 && <div class="products">{showAllItems}</div>}
       <hr></hr>
-      <div class="oneProduct">
-        <h1>Show One Product by Id:</h1>
-        {viewer2 && <div>Product: {showOneItem}</div>}
-        <hr></hr>
-      </div>
-      <div class="addProduct">
-        <h3>Add a New Product :</h3>
+      <hr></hr>
+      <div>
+        <h3>Add a new product :</h3>
         <form action="">
           <input
             type="number"
@@ -250,6 +292,73 @@ function App() {
             {product[index].rating.count} <br />
           </div>
         )}
+      </div>
+      <div>
+        <h3>Update a product by id :</h3>
+        <form action="">
+          <input
+            type="number"
+            placeholder="id?"
+            name="_idupdate"
+            value={updateProduct._id}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="text"
+            placeholder="title?"
+            name="titleupdate"
+            value={updateProduct.title}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="number"
+            placeholder="price?"
+            name="priceupdate"
+            value={updateProduct.price}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="text"
+            placeholder="description?"
+            name="descriptionupdate"
+            value={updateProduct.description}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="text"
+            placeholder="category?"
+            name="categoryupdate"
+            value={updateProduct.category}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="text"
+            placeholder="image?"
+            name="imageupdate"
+            value={updateProduct.image}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="number"
+            placeholder="rate?"
+            name="rateupdate"
+            value={updateProduct.rating.rate}
+            onChange={handleupdateChange}
+          />
+          <input
+            type="number"
+            placeholder="count?"
+            name="countupdate"
+            value={updateProduct.rating.count}
+            onChange={handleupdateChange}
+          />
+          <button type="submit" onClick={handleupdateOnSubmit}>
+            submit
+          </button>
+        </form>
+      </div>
+      <div>
+        <h3>Delete one product:</h3>
         <input
           type="checkbox"
           id="acceptdelete"

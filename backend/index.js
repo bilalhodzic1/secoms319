@@ -71,6 +71,46 @@ app.delete("/delete", async (req, res) => {
     console.log("Error while deleting :" + p_id + " " + err);
   }
 });
+app.post("/Update", async (req, res) => {
+  console.log("Update :", req.body);
+  const p_id = req.body._id;
+  const ptitle = req.body.title;
+  const pprice = req.body.price;
+  const pdescription = req.body.description;
+  const pcategory = req.body.category;
+  const pimage = req.body.image;
+  const prate = req.body.rating.rate;
+  const pcount = req.body.rating.count;
+  try {
+    const query = { _id: p_id };
+    const toUpdate = await Product.findOne(query);
+    if (ptitle !== "notitle") {
+      toUpdate.title = ptitle;
+    }
+    if (pprice !== -1) {
+      toUpdate.price = pprice;
+    }
+    if (pdescription !== "nodesc") {
+      toUpdate.description = pdescription;
+    }
+    if (pcategory !== "nocat") {
+      toUpdate.category = pcategory;
+    }
+    if (pimage !== "http://127.0.0.1:4000/images/") {
+      toUpdate.image = pimage;
+    }
+    if (prate !== -1 && pcount !== -1) {
+      toUpdate.rating = { prate: pcount };
+    }
+    toUpdate.save();
+    const messageResponse = {
+      message: `Product ${req.body._id} updated correctly`,
+    };
+    res.send(JSON.stringify(messageResponse));
+  } catch (err) {
+    console.log("Error while updating :" + p_id + " " + err);
+  }
+});
 app.listen(port, () => {
   console.log(`App listening at http://%s:%s`, host, port);
 });
