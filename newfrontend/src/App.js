@@ -9,6 +9,20 @@ function App() {
   const [viewer2, setViewer2] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
+  const [currState, setCurrState] = useState(0);
+
+  const addTime = () => {
+    setCurrState(1);
+  };
+  const updateTime = () => {
+    setCurrState(2);
+  };
+  const deleteTime = () => {
+    setCurrState(3);
+  };
+  const readTime = () => {
+    setCurrState(0);
+  };
 
   useEffect(() => {
     getAllProducts();
