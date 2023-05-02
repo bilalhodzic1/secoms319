@@ -215,7 +215,7 @@ function App() {
       {viewer1 && <div class="products">{showAllItems}</div>}
       <hr></hr>
       <hr></hr>
-      <div>
+      <div class="addProduct">
         <h3>Add a new product :</h3>
         <form action="">
           <input
@@ -292,6 +292,18 @@ function App() {
             {product[index].rating.count} <br />
           </div>
         )}
+        <input
+          type="checkbox"
+          id="acceptdelete"
+          name="acceptdelete"
+          checked={checked4}
+          onChange={(e) => setChecked4(!checked4)}
+        />
+        <button onClick={() => getOneByOneProductPrev()}>Prev</button>
+        <button onClick={() => getOneByOneProductNext()}>Next</button>
+        <button onClick={() => deleteOneProduct(product[index]._id)}>
+          Delete
+        </button>
       </div>
       <div>
         <h3>Update a product by id :</h3>
@@ -356,21 +368,6 @@ function App() {
             submit
           </button>
         </form>
-      </div>
-      <div>
-        <h3>Delete one product:</h3>
-        <input
-          type="checkbox"
-          id="acceptdelete"
-          name="acceptdelete"
-          checked={checked4}
-          onChange={(e) => setChecked4(!checked4)}
-        />
-        <button onClick={() => getOneByOneProductPrev()}>Prev</button>
-        <button onClick={() => getOneByOneProductNext()}>Next</button>
-        <button onClick={() => deleteOneProduct(product[index]._id)}>
-          Delete
-        </button>
       </div>
     </div>
   );

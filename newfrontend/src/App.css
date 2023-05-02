@@ -85,9 +85,10 @@
 }
 
 .deleteProduct {
-  background-color: antiquewhite;
   text-align: center;
+  background-color: antiquewhite;
   border-style: solid;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .deleteProduct img {
