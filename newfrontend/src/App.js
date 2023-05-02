@@ -416,7 +416,8 @@ function App() {
         </div>
 
         <div class="updateProduct">
-          <div>Search for product by id</div>
+          <br></br>
+          <div>Search for Product by Id</div>
           <input
             type="text"
             id="message"
