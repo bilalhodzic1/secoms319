@@ -9,7 +9,7 @@ const ReactFormDataSchema = new mongoose.Schema(
     image: { type: String },
     rating: { rate: { type: Number }, count: { type: Number } },
   },
-  { collection: "Assignment3InClass" }
+  { collection: "fakestore_catalog" }
 );
 const Product = mongoose.model("Product", ReactFormDataSchema);
 module.exports = Product;
