@@ -218,17 +218,22 @@ function App() {
       });
     setChecked4(!checked4);
   }
-  return (
-    <div class="index">
-      <div class="header">
-        <h1>Catalog of Products </h1>
-        <button onClick={() => getAllProducts()}>Show All Products</button>
-        <h1>Show all Available Products:</h1>
+  if (currState === 0) {
+    return (
+      <div class="index">
+        <div class="header">
+          <h1>Catalog of Products </h1>
+          <button onClick={() => getAllProducts()}>Show All Products</button>
+          <h1>Show all Available Products:</h1>
+        </div>
+        <hr></hr>
+        {viewer1 && <div class="products">{showAllItems}</div>}
+        <hr></hr>
+        <hr></hr>
       </div>
-      <hr></hr>
-      {viewer1 && <div class="products">{showAllItems}</div>}
-      <hr></hr>
-      <hr></hr>
+    );
+  } else if (currState === 1) {
+    return (
       <div class="addProduct">
         <h3>Add a new product :</h3>
         <form action="">
@@ -293,6 +298,9 @@ function App() {
           </button>
         </form>
       </div>
+    );
+  } else if (currState === 3) {
+    return (
       <div class="delete">
         <h3>Delete One Product:</h3>
         {checked4 && (
@@ -319,6 +327,9 @@ function App() {
           Delete
         </button>
       </div>
+    );
+  } else if (currState === 2) {
+    return (
       <div>
         <h3>Update a product by id :</h3>
         <form action="">
@@ -383,7 +394,7 @@ function App() {
           </button>
         </form>
       </div>
-    </div>
-  );
+    );
+  }
 } // App end
 export default App;
