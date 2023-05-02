@@ -51,7 +51,7 @@ function App() {
 
   const showAllItems = product.map((el) => (
     <div key={el._id} class="item">
-      <img src={el.image} width={100} /> <br />
+      <img src={el.image} width={300} /> <br />
       Title: {el.title} <br />
       Category: {el.category} <br />
       Price: {el.price} <br />
@@ -88,7 +88,7 @@ function App() {
   }
   const showOneItem = oneProduct.map((el) => (
     <div key={el._id}>
-      <img src={el.image} width={30} /> <br />
+      <img src={el.image} width={300} /> <br />
       Title: {el.title} <br />
       Category: {el.category} <br />
       Price: {el.price} <br />
@@ -360,7 +360,7 @@ function App() {
         <h3>Delete one Product:</h3>
         {checked4 && (
           <div key={product[index]._id} class="deleteProduct">
-            <img src={product[index].image} width={100} /> <br />
+            <img src={product[index].image} width={300} /> <br />
             Id: {product[index]._id} <br />
             Title: {product[index].title} <br />
             Category: {product[index].category} <br />

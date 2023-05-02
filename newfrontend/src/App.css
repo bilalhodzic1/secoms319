@@ -39,7 +39,7 @@
 
 .header {
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -53,7 +53,7 @@
 
 .topnavHome {
   overflow: hidden;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   text-align: center;
   padding-top: 6px;
   padding-bottom: 5px;
@@ -61,7 +61,7 @@
 
 .topnav {
   overflow: hidden;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   text-align: center;
   padding-top: 6px;
   padding-bottom: 5px;
@@ -73,7 +73,7 @@
 }
 
 .item {
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   text-align: center;
   border-style: solid;
 }
@@ -92,7 +92,7 @@
 
 .addProduct {
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -107,12 +107,12 @@
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
 }
 
 .deleteProduct {
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -125,12 +125,12 @@
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
 }
 
 .updateProduct {
   text-align: center;
-  background-color: antiquewhite;
+  background-color: #d3d3d3;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
