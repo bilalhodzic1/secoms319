@@ -23,7 +23,9 @@ function App() {
   const readTime = () => {
     setCurrState(0);
   };
-
+  const infoTime = () => {
+    setCurrState(4);
+  };
   useEffect(() => {
     getAllProducts();
   }, []);
@@ -482,6 +484,8 @@ function App() {
         </div>
       </div>
     );
+  } else if (currState == 4) {
+    return <div></div>;
   }
 } // App end
 export default App;
