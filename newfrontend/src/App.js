@@ -236,6 +236,9 @@ function App() {
           <button type="button" onClick={() => deleteTime()} id="checkout">
             Delete Product
           </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
         </div>
         <div class="header">
           <h1>Saya's Catalog </h1>
@@ -260,6 +263,9 @@ function App() {
           </button>
           <button type="button" onClick={() => deleteTime()} id="checkout">
             Delete Product
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
           </button>
         </div>
         <h3>Add a new Product :</h3>
@@ -358,6 +364,9 @@ function App() {
           <button type="button" onClick={() => deleteTime()} id="checkout">
             Delete Product
           </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
         </div>
         <h3>Delete one Product:</h3>
         {checked4 && (
@@ -400,6 +409,9 @@ function App() {
           </button>
           <button type="button" onClick={() => deleteTime()} id="checkout">
             Delete Product
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
           </button>
         </div>
         <div class="updateProduct">
@@ -485,7 +497,37 @@ function App() {
       </div>
     );
   } else if (currState == 4) {
-    return <div></div>;
+    return (
+      <div class="info">
+        <div class="topnav">
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Create Product
+          </button>
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Read Products
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+        </div>
+        <strong>Names:</strong> Tristan Sayasit and Bilal Hodzic <br></br>
+        <strong>Emails:</strong> sayasit7@iastate.edu and bhodzic@iastate.edu
+        <br></br>
+        <strong>Course:</strong> COM S 319 <br></br>
+        <strong>Date:</strong> 5/1/2023 <br></br>
+        <strong>Professor:</strong> Professor Aldaco <br></br>
+        <strong>Intoduction:</strong> Welcome to Saya's Shoe Catalog! Our newly
+        launched website is our newest method of selling our products. The
+        website contains intuitive features for sellers to list new products
+        that they wish to sell!
+      </div>
+    );
   }
 } // App end
 export default App;
