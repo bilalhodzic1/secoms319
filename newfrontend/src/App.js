@@ -221,22 +221,48 @@ function App() {
   if (currState === 0) {
     return (
       <div class="index">
+        <div class="topnavHome">
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Create Product
+          </button>
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Read Products
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+        </div>
         <div class="header">
           <h1>Catalog of Products </h1>
           <button onClick={() => getAllProducts()}>Show All Products</button>
           <h1>Show all Available Products:</h1>
         </div>
-        <hr></hr>
         {viewer1 && <div class="products">{showAllItems}</div>}
-        <hr></hr>
-        <hr></hr>
       </div>
     );
   } else if (currState === 1) {
     return (
       <div class="addProduct">
-        <h3>Add a new product :</h3>
+        <div class="topnav">
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Create Product
+          </button>
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Read Products
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+        </div>
+        <h3>Add a new Product :</h3>
         <form action="">
+          <label for="_id">ID? </label>
           <input
             type="number"
             placeholder="id?"
@@ -244,6 +270,8 @@ function App() {
             value={addNewProduct._id}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="title">Title? </label>
           <input
             type="text"
             placeholder="title?"
@@ -251,6 +279,8 @@ function App() {
             value={addNewProduct.title}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="price">Price? </label>
           <input
             type="number"
             placeholder="price?"
@@ -258,13 +288,17 @@ function App() {
             value={addNewProduct.price}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="description">Description? </label>
           <input
             type="text"
-            placeholder="description?"
+            placeholder="desc?"
             name="description"
             value={addNewProduct.description}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="category">Category? </label>
           <input
             type="text"
             placeholder="category?"
@@ -272,6 +306,8 @@ function App() {
             value={addNewProduct.category}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="image">IMG Link? </label>
           <input
             type="text"
             placeholder="image?"
@@ -279,6 +315,8 @@ function App() {
             value={addNewProduct.image}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="rate">Rating? </label>
           <input
             type="number"
             placeholder="rate?"
@@ -286,6 +324,8 @@ function App() {
             value={addNewProduct.rating.rate}
             onChange={handleChange}
           />
+          <br></br>
+          <label for="count">Count? </label>
           <input
             type="number"
             placeholder="count?"
@@ -293,8 +333,9 @@ function App() {
             value={addNewProduct.rating.count}
             onChange={handleChange}
           />
+          <br></br>
           <button type="submit" onClick={handleOnSubmit}>
-            submit
+            Submit
           </button>
         </form>
       </div>
@@ -302,7 +343,21 @@ function App() {
   } else if (currState === 3) {
     return (
       <div class="delete">
-        <h3>Delete One Product:</h3>
+        <div class="topnav">
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Create Product
+          </button>
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Read Products
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+        </div>
+        <h3>Delete one Product:</h3>
         {checked4 && (
           <div key={product[index]._id} class="deleteProduct">
             <img src={product[index].image} width={100} /> <br />
@@ -330,69 +385,101 @@ function App() {
     );
   } else if (currState === 2) {
     return (
-      <div>
-        <h3>Update a product by id :</h3>
-        <form action="">
-          <input
-            type="number"
-            placeholder="id?"
-            name="_idupdate"
-            value={updateProduct._id}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="text"
-            placeholder="title?"
-            name="titleupdate"
-            value={updateProduct.title}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="number"
-            placeholder="price?"
-            name="priceupdate"
-            value={updateProduct.price}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="text"
-            placeholder="description?"
-            name="descriptionupdate"
-            value={updateProduct.description}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="text"
-            placeholder="category?"
-            name="categoryupdate"
-            value={updateProduct.category}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="text"
-            placeholder="image?"
-            name="imageupdate"
-            value={updateProduct.image}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="number"
-            placeholder="rate?"
-            name="rateupdate"
-            value={updateProduct.rating.rate}
-            onChange={handleupdateChange}
-          />
-          <input
-            type="number"
-            placeholder="count?"
-            name="countupdate"
-            value={updateProduct.rating.count}
-            onChange={handleupdateChange}
-          />
-          <button type="submit" onClick={handleupdateOnSubmit}>
-            submit
+      <div class="update">
+        <div class="topnav">
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Create Product
           </button>
-        </form>
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Read Products
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+        </div>
+        <div class="updateProduct">
+          <h3>Update a Product by Id :</h3>
+          <form action="">
+            <label for="_idupdate">Current ID? </label>
+            <input
+              type="number"
+              placeholder="id?"
+              name="_idupdate"
+              value={updateProduct._id}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="titleupdate">New Title? </label>
+            <input
+              type="text"
+              placeholder="title?"
+              name="titleupdate"
+              value={updateProduct.title}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="priceupdate">New Price? </label>
+            <input
+              type="number"
+              placeholder="price?"
+              name="priceupdate"
+              value={updateProduct.price}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="desctiptionupdate">New Descripton? </label>
+            <input
+              type="text"
+              placeholder="description?"
+              name="descriptionupdate"
+              value={updateProduct.description}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="categoryupdate">New Category? </label>
+            <input
+              type="text"
+              placeholder="category?"
+              name="categoryupdate"
+              value={updateProduct.category}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="imageupdate">New Image Link? </label>
+            <input
+              type="text"
+              placeholder="image?"
+              name="imageupdate"
+              value={updateProduct.image}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="rateupdate">New Rate? </label>
+            <input
+              type="number"
+              placeholder="rate?"
+              name="rateupdate"
+              value={updateProduct.rating.rate}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <label for="countupdate">New Count? </label>
+            <input
+              type="number"
+              placeholder="count?"
+              name="countupdate"
+              value={updateProduct.rating.count}
+              onChange={handleupdateChange}
+            />
+            <br></br>
+            <button type="submit" onClick={handleupdateOnSubmit}>
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
