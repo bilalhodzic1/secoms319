@@ -27,12 +27,13 @@ function App() {
   });
 
   const showAllItems = product.map((el) => (
-    <div key={el._id}>
-      <img src={el.image} width={30} /> <br />
+    <div key={el._id} class="item">
+      <img src={el.image} width={100} /> <br />
       Title: {el.title} <br />
       Category: {el.category} <br />
       Price: {el.price} <br />
-      Rate :{el.rating.rate} and Count:{el.rating.count} <br />
+      Rate: {el.rating.rate} and Count: {el.rating.count}
+      <br />
     </div>
   ));
   function getAllProducts() {
@@ -151,25 +152,29 @@ function App() {
     setChecked4(!checked4);
   }
   return (
-    <div>
-      <h1>Catalog of Products </h1>
-      <button onClick={() => getAllProducts()}>Show All users</button>
-      <input
-        type="text"
-        id="message"
-        name="message"
-        placeholder="id"
-        onChange={(e) => getOneProduct(e.target.value)}
-      />
-      <h1>Show all available Products:</h1>
+    <div class="index">
+      <div class="header">
+        <h1>Catalog of Products </h1>
+        <button onClick={() => getAllProducts()}>Show All Products</button>
+        <input
+          type="text"
+          id="message"
+          name="message"
+          placeholder="id"
+          onChange={(e) => getOneProduct(e.target.value)}
+        />
+        <h1>Show all Available Products:</h1>
+      </div>
       <hr></hr>
-      {viewer1 && <div>Products {showAllItems}</div>}
+      {viewer1 && <div class="products">{showAllItems}</div>}
       <hr></hr>
-      <h1>Show one Product by Id:</h1>
-      {viewer2 && <div>Product: {showOneItem}</div>}
-      <hr></hr>
-      <div>
-        <h3>Add a new product :</h3>
+      <div class="oneProduct">
+        <h1>Show One Product by Id:</h1>
+        {viewer2 && <div>Product: {showOneItem}</div>}
+        <hr></hr>
+      </div>
+      <div class="addProduct">
+        <h3>Add a New Product :</h3>
         <form action="">
           <input
             type="number"
@@ -232,8 +237,19 @@ function App() {
           </button>
         </form>
       </div>
-      <div>
-        <h3>Delete one product:</h3>
+      <div class="delete">
+        <h3>Delete One Product:</h3>
+        {checked4 && (
+          <div key={product[index]._id} class="deleteProduct">
+            <img src={product[index].image} width={100} /> <br />
+            Id: {product[index]._id} <br />
+            Title: {product[index].title} <br />
+            Category: {product[index].category} <br />
+            Price: {product[index].price} <br />
+            Rate: {product[index].rating.rate} and Count:{" "}
+            {product[index].rating.count} <br />
+          </div>
+        )}
         <input
           type="checkbox"
           id="acceptdelete"
@@ -246,17 +262,6 @@ function App() {
         <button onClick={() => deleteOneProduct(product[index]._id)}>
           Delete
         </button>
-        {checked4 && (
-          <div key={product[index]._id}>
-            <img src={product[index].image} width={30} /> <br />
-            Id:{product[index]._id} <br />
-            Title: {product[index].title} <br />
-            Category: {product[index].category} <br />
-            Price: {product[index].price} <br />
-            Rate :{product[index].rating.rate} and Count:
-            {product[index].rating.count} <br />
-          </div>
-        )}
       </div>
     </div>
   );
