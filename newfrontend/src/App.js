@@ -455,12 +455,15 @@ function App() {
           </button>
         </div>
         <strong>Names:</strong> Tristan Sayasit and Bilal Hodzic <br></br>
+        <img src=""></img>
         <strong>Emails:</strong> sayasit7@iastate.edu and bhodzic@iastate.edu
         <br></br>
-        <strong>Course:</strong> COM S 319 <br></br>
-        <strong>Date:</strong> 5/1/2023 <br></br>
-        <strong>Professor:</strong> Professor Aldaco <br></br>
-        <strong>Intoduction:</strong> Since 1776 our
+        <strong>Course:</strong> SE/ComS319 Construction of User Interfaces
+        <br></br>
+        <strong>Date:</strong> Spring 2023, 5/5/2023 <br></br>
+        <strong>Professor:</strong> Dr. Abraham N. Aldaco Gastelum <br></br>
+        <strong>Professor Email: aaldaco@iastate.edu</strong>
+        <strong>Intoduction:</strong>
       </div>
     );
   }
