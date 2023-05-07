@@ -4,6 +4,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 function App() {
   const [Military, setMilitary] = useState([]);
+  const [Chemical, setChemical] = useState([]);
   const [viewer1, setViewer1] = useState(false);
   const [oneProduct, setOneProduct] = useState([]);
   const [viewer2, setViewer2] = useState(false);
@@ -27,9 +28,15 @@ function App() {
   const infoTime = () => {
     setCurrState(4);
   };
+  const chemicalTime = () => {
+    setCurrState(5);
+  };
+  useEffect(() => {
+    getAllChemicals();
+  }, [Chemical]);
   useEffect(() => {
     getAllMilitary();
-  }, []);
+  }, [Military]);
   useEffect(() => {
     getAllMilitary();
   }, [checked4]);
@@ -59,6 +66,15 @@ function App() {
       <br />
     </div>
   ));
+  const showAllchemicals = Chemical.map((el) => (
+    <div key={el._id} class="item">
+      <img src={el.image} width={300} /> <br />
+      Title: {el.title} <br />
+      Category: {el.category} <br />
+      Price: {el.price} <br />
+      <br />
+    </div>
+  ));
   function getAllMilitary() {
     fetch("http://localhost:4000/military")
       .then((response) => response.json())
@@ -67,7 +83,14 @@ function App() {
         console.log(data);
         setMilitary(data);
       });
-    setListItems();
+  }
+  function getAllChemicals() {
+    fetch("http://localhost:4000/chemicals")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setChemical(data);
+      });
   }
   function getOneProduct(id) {
     console.log(id);
@@ -122,7 +145,7 @@ function App() {
   function handleupdateOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
-    fetch("http://localhost:4000/Update", {
+    fetch("http://localhost:4000/Update/military", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateProduct),
