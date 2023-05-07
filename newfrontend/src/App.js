@@ -31,6 +31,9 @@ function App() {
   const chemicalTime = () => {
     setCurrState(5);
   };
+  const addChemicalTime = () => {
+    setCurrState(6);
+  };
   useEffect(() => {
     getAllChemicals();
   }, [Chemical]);
@@ -41,6 +44,14 @@ function App() {
     getAllMilitary();
   }, [checked4]);
   const [addNewProduct, setAddNewProduct] = useState({
+    _id: 0,
+    title: "",
+    price: 0.0,
+    description: "",
+    category: "",
+    image: "http://127.0.0.1:4000/images/",
+  });
+  const [addNewChemical, setAddNewChemical] = useState({
     _id: 0,
     title: "",
     price: 0.0,
@@ -134,6 +145,23 @@ function App() {
       setAddNewProduct({ ...addNewProduct, image: temp });
     }
   }
+  function handleChangeChemical(evt) {
+    const value = evt.target.value;
+    if (evt.target.name === "_idchemical") {
+      setAddNewChemical({ ...addNewChemical, _id: value });
+    } else if (evt.target.name === "titlechemical") {
+      setAddNewChemical({ ...addNewChemical, title: value });
+    } else if (evt.target.name === "pricechemical") {
+      setAddNewChemical({ ...addNewChemical, price: value });
+    } else if (evt.target.name === "descriptionchemical") {
+      setAddNewChemical({ ...addNewChemical, description: value });
+    } else if (evt.target.name === "categorychemical") {
+      setAddNewChemical({ ...addNewChemical, category: value });
+    } else if (evt.target.name === "imagechemical") {
+      const temp = value;
+      setAddNewChemical({ ...addNewChemical, image: temp });
+    }
+  }
   function handleupdateChange(evt) {
     const value = evt.target.value;
     if (evt.target.name === "_idupdate") {
@@ -173,6 +201,25 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         console.log("Post a new military completed");
+        console.log(data);
+        if (data) {
+          //const keys = Object.keys(data);
+          const value = Object.values(data);
+          alert(value);
+        }
+      });
+  }
+  function handleOnSubmitChemical(e) {
+    e.preventDefault();
+    console.log(e.target.value);
+    fetch("http://localhost:4000/insert/chemical", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(addNewChemical),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Post a new Chemical completed");
         console.log(data);
         if (data) {
           //const keys = Object.keys(data);
@@ -226,7 +273,7 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
           <button
@@ -251,6 +298,129 @@ function App() {
         {<div class="products">{showAllItems}</div>}
       </div>
     );
+  } else if (currState === 6) {
+    return (
+      <div class="addProduct">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
+            View Chemicals
+          </button>
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Add Product
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+        </div>
+        <h3>Add a new Product :</h3>
+        <form action="">
+          <label for="_id">ID? </label>
+          <input
+            type="number"
+            placeholder="id?"
+            name="_idchemical"
+            value={addNewChemical._id}
+            onChange={handleChangeChemical}
+          />
+          <br></br>
+          <label for="title">Title? </label>
+          <input
+            type="text"
+            placeholder="title?"
+            name="titlechemical"
+            value={addNewChemical.title}
+            onChange={handleChangeChemical}
+          />
+          <br></br>
+          <label for="price">Price? </label>
+          <input
+            type="number"
+            placeholder="price?"
+            name="price"
+            value={addNewChemical.price}
+            onChange={handleChangeChemical}
+          />
+          <br></br>
+          <label for="description">Description? </label>
+          <input
+            type="text"
+            placeholder="desc?"
+            name="description"
+            value={addNewChemical.description}
+            onChange={handleChangeChemical}
+          />
+          <br></br>
+          <label for="category">Category? </label>
+          <input
+            type="text"
+            placeholder="category?"
+            name="categorychemical"
+            value={addNewChemical.category}
+            onChange={handleChangeChemical}
+          />
+          <br></br>
+          <label for="image">IMG Link? </label>
+          <input
+            type="text"
+            placeholder="image?"
+            name="imagechemical"
+            value={addNewChemical.image}
+            onChange={handleChangeChemical}
+          />
+          <br></br>
+          <button type="submit" onClick={handleOnSubmitChemical}>
+            Submit
+          </button>
+        </form>
+      </div>
+    );
+  } else if (currState === 5) {
+    return (
+      <div class="index">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
+            View Chemicals
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              addTime();
+            }}
+            id="checkout"
+          >
+            Add Product
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete Product
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+        </div>
+        {<div class="products">{showAllchemicals}</div>}
+      </div>
+    );
   } else if (currState === 1) {
     return (
       <div class="addProduct">
@@ -261,7 +431,7 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
@@ -349,7 +519,7 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
@@ -399,7 +569,7 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
@@ -466,7 +636,7 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
