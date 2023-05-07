@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const Product = require("./dataSchema.js");
+const Military = require("./militarySchema.js");
+const Chemical = require("./chemicalSchema.js");
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -10,27 +11,33 @@ app.use("/images", express.static("images"));
 mongoose.connect(
   "mongodb+srv://bhodzic:K7yK07OZqhO9fSon@cluster52845.751uhbi.mongodb.net/?retryWrites=true&w=majority",
   {
-    dbName: "reactdata",
+    dbName: "MilitaryAndChemicalStore",
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
 const port = process.env.PORT || 4000;
 const host = "localhost";
-app.get("/", async (req, resp) => {
+app.get("/military", async (req, resp) => {
   const query = {};
-  const allProducts = await Product.find(query);
+  const allProducts = await Military.find(query);
   console.log(allProducts);
   resp.send(allProducts);
 });
-app.get("/:id", async (req, resp) => {
+app.get("/chemical", async (req, resp) => {
+  const query = {};
+  const allProducts = await Chemical.find(query);
+  console.log(allProducts);
+  resp.send(allProducts);
+});
+app.get("/:id/military", async (req, resp) => {
   const id = req.params.id;
   const query = { _id: id };
-  const oneProduct = await Product.findOne(query);
+  const oneProduct = await Military.findOne(query);
   console.log(oneProduct);
   resp.send(oneProduct);
 });
-app.post("/insert", async (req, res) => {
+app.post("/insert/Military", async (req, res) => {
   console.log(req.body);
   const p_id = req.body._id;
   const ptitle = req.body.title;
@@ -38,40 +45,37 @@ app.post("/insert", async (req, res) => {
   const pdescription = req.body.description;
   const pcategory = req.body.category;
   const pimage = req.body.image;
-  const prate = req.body.rating.rate;
-  const pcount = req.body.rating.count;
-  const formData = new Product({
+  const formData = new Military({
     _id: p_id,
     title: ptitle,
     price: pprice,
     description: pdescription,
     category: pcategory,
     image: pimage,
-    rating: { rate: prate, count: pcount },
   });
   try {
     // await formData.save();
-    await Product.create(formData);
-    const messageResponse = { message: `Product ${p_id} added correctly` };
+    await Military.create(formData);
+    const messageResponse = { message: `Military ${p_id} added correctly` };
     res.send(JSON.stringify(messageResponse));
   } catch (err) {
-    console.log("Error while adding a new product:" + err);
+    console.log("Error while adding a new military:" + err);
   }
 });
-app.delete("/delete", async (req, res) => {
+app.delete("/delete/military", async (req, res) => {
   console.log("Delete :", req.body);
   try {
     const query = { _id: req.body._id };
-    await Product.deleteOne(query);
+    await Military.deleteOne(query);
     const messageResponse = {
-      message: `Product ${req.body._id} deleted correctly`,
+      message: `Military ${req.body._id} deleted correctly`,
     };
     res.send(JSON.stringify(messageResponse));
   } catch (err) {
     console.log("Error while deleting :" + p_id + " " + err);
   }
 });
-app.put("/Update", async (req, res) => {
+app.put("/Update/military", async (req, res) => {
   console.log("Update :", req.body);
   const p_id = req.body._id;
   const pprice = req.body.price;
@@ -79,13 +83,13 @@ app.put("/Update", async (req, res) => {
   try {
     console.log("here");
     const query = { _id: p_id };
-    const toUpdate = await Product.findOne(query);
+    const toUpdate = await Military.findOne(query);
     if (pprice !== -1) {
       toUpdate.price = pprice;
     }
     toUpdate.save();
     const messageResponse = {
-      message: `Product ${req.body._id} updated correctly`,
+      message: `Military ${req.body._id} updated correctly`,
     };
     res.send(JSON.stringify(messageResponse));
   } catch (err) {

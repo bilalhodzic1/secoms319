@@ -3,7 +3,7 @@ import "./App.css";
 
 import { useState, useEffect } from "react";
 function App() {
-  const [product, setProduct] = useState([]);
+  const [Military, setMilitary] = useState([]);
   const [viewer1, setViewer1] = useState(false);
   const [oneProduct, setOneProduct] = useState([]);
   const [viewer2, setViewer2] = useState(false);
@@ -28,10 +28,10 @@ function App() {
     setCurrState(4);
   };
   useEffect(() => {
-    getAllProducts();
+    getAllMilitary();
   }, []);
   useEffect(() => {
-    getAllProducts();
+    getAllMilitary();
   }, [checked4]);
   const [addNewProduct, setAddNewProduct] = useState({
     _id: 0,
@@ -40,7 +40,6 @@ function App() {
     description: "",
     category: "",
     image: "http://127.0.0.1:4000/images/",
-    rating: { rate: 0.0, count: 0 },
   });
   const [updateProduct, setupdateProduct] = useState({
     _id: 0,
@@ -49,33 +48,31 @@ function App() {
     description: "nodesc",
     category: "nocat",
     image: "http://127.0.0.1:4000/images/",
-    rating: { rate: -1, count: -1 },
   });
 
-  const showAllItems = product.map((el) => (
+  const showAllItems = Military.map((el) => (
     <div key={el._id} class="item">
       <img src={el.image} width={300} /> <br />
       Title: {el.title} <br />
       Category: {el.category} <br />
       Price: {el.price} <br />
-      Rate: {el.rating.rate} and Count: {el.rating.count}
       <br />
     </div>
   ));
-  function getAllProducts() {
-    fetch("http://localhost:4000/")
+  function getAllMilitary() {
+    fetch("http://localhost:4000/military")
       .then((response) => response.json())
       .then((data) => {
         console.log("Show Catalog of Products :");
         console.log(data);
-        setProduct(data);
+        setMilitary(data);
       });
     setListItems();
   }
   function getOneProduct(id) {
     console.log(id);
     if (id >= 1 && id <= 20) {
-      fetch("http://localhost:4000/" + id)
+      fetch("http://localhost:4000/" + id + "/military")
         .then((response) => response.json())
         .then((data) => {
           console.log("Show one product :", id);
@@ -95,7 +92,6 @@ function App() {
       Title: {el.title} <br />
       Category: {el.category} <br />
       Price: {el.price} <br />
-      Rate :{el.rating.rate} and Count:{el.rating.count} <br />
     </div>
   ));
   function handleChange(evt) {
@@ -113,39 +109,14 @@ function App() {
     } else if (evt.target.name === "image") {
       const temp = value;
       setAddNewProduct({ ...addNewProduct, image: temp });
-    } else if (evt.target.name === "rate") {
-      setAddNewProduct({ ...addNewProduct, rating: { rate: value } });
-    } else if (evt.target.name === "count") {
-      const temp = addNewProduct.rating.rate;
-      setAddNewProduct({
-        ...addNewProduct,
-        rating: { rate: temp, count: value },
-      });
     }
   }
   function handleupdateChange(evt) {
     const value = evt.target.value;
     if (evt.target.name === "_idupdate") {
       setupdateProduct({ ...updateProduct, _id: value });
-    } else if (evt.target.name === "titleupdate") {
-      setupdateProduct({ ...updateProduct, title: value });
     } else if (evt.target.name === "priceupdate") {
       setupdateProduct({ ...updateProduct, price: value });
-    } else if (evt.target.name === "descriptionupdate") {
-      setupdateProduct({ ...updateProduct, description: value });
-    } else if (evt.target.name === "categoryupdate") {
-      setupdateProduct({ ...updateProduct, category: value });
-    } else if (evt.target.name === "imageupdate") {
-      const temp = value;
-      setupdateProduct({ ...updateProduct, image: temp });
-    } else if (evt.target.name === "rateupdate") {
-      setupdateProduct({ ...updateProduct, rating: { rate: value } });
-    } else if (evt.target.name === "countupdate") {
-      const temp = updateProduct.rating.rate;
-      setupdateProduct({
-        ...updateProduct,
-        rating: { rate: temp, count: value },
-      });
     }
   }
   function handleupdateOnSubmit(e) {
@@ -166,19 +137,19 @@ function App() {
           alert(value);
         }
       });
-    getAllProducts();
+    getAllMilitary();
   }
   function handleOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
-    fetch("http://localhost:4000/insert", {
+    fetch("http://localhost:4000/insert/military", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addNewProduct),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Post a new product completed");
+        console.log("Post a new military completed");
         console.log(data);
         if (data) {
           //const keys = Object.keys(data);
@@ -188,31 +159,31 @@ function App() {
       });
   }
   function getOneByOneProductNext() {
-    if (product.length > 0) {
-      if (index === product.length - 1) setIndex(0);
+    if (Military.length > 0) {
+      if (index === Military.length - 1) setIndex(0);
       else setIndex(index + 1);
-      if (product.length > 0) setChecked4(true);
+      if (Military.length > 0) setChecked4(true);
       else setChecked4(false);
     }
   }
   function getOneByOneProductPrev() {
-    if (product.length > 0) {
-      if (index === 0) setIndex(product.length - 1);
+    if (Military.length > 0) {
+      if (index === 0) setIndex(Military.length - 1);
       else setIndex(index - 1);
-      if (product.length > 0) setChecked4(true);
+      if (Military.length > 0) setChecked4(true);
       else setChecked4(false);
     }
   }
   function deleteOneProduct(deleteid) {
     console.log("Product to delete :", deleteid);
-    fetch("http://localhost:4000/delete/", {
+    fetch("http://localhost:4000/delete/military", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ _id: deleteid }),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Delete a product completed : ", deleteid);
+        console.log("Delete a military completed : ", deleteid);
         console.log(data);
         if (data) {
           //const keys = Object.keys(data);
@@ -239,7 +210,17 @@ function App() {
             }}
             id="checkout"
           >
-            Add Product
+            Create Product
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              readTime();
+              getAllMilitary();
+            }}
+            id="checkout"
+          >
+            Read Products
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
@@ -333,24 +314,6 @@ function App() {
             onChange={handleChange}
           />
           <br></br>
-          <label for="rate">Rating? </label>
-          <input
-            type="number"
-            placeholder="rate?"
-            name="rate"
-            value={addNewProduct.rating.rate}
-            onChange={handleChange}
-          />
-          <br></br>
-          <label for="count">Count? </label>
-          <input
-            type="number"
-            placeholder="count?"
-            name="count"
-            value={addNewProduct.rating.count}
-            onChange={handleChange}
-          />
-          <br></br>
           <button type="submit" onClick={handleOnSubmit}>
             Submit
           </button>
@@ -382,14 +345,12 @@ function App() {
         </div>
         <h3>Delete one Product:</h3>
         {checked4 && (
-          <div key={product[index]._id} class="deleteProduct">
-            <img src={product[index].image} width={300} /> <br />
-            Id: {product[index]._id} <br />
-            Title: {product[index].title} <br />
-            Category: {product[index].category} <br />
-            Price: {product[index].price} <br />
-            Rate: {product[index].rating.rate} and Count:{" "}
-            {product[index].rating.count} <br />
+          <div key={Military[index]._id} class="deleteProduct">
+            <img src={Military[index].image} width={300} /> <br />
+            Id: {Military[index]._id} <br />
+            Title: {Military[index].title} <br />
+            Category: {Military[index].category} <br />
+            Price: {Military[index].price} <br />
           </div>
         )}
         <input
@@ -401,7 +362,7 @@ function App() {
         />
         <button onClick={() => getOneByOneProductPrev()}>Prev</button>
         <button onClick={() => getOneByOneProductNext()}>Next</button>
-        <button onClick={() => deleteOneProduct(product[index]._id)}>
+        <button onClick={() => deleteOneProduct(Military[index]._id)}>
           Delete
         </button>
       </div>
