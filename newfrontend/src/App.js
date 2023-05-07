@@ -215,16 +215,6 @@ function App() {
           >
             Add Product
           </button>
-          <button
-            type="button"
-            onClick={() => {
-              readTime();
-              getAllMilitary();
-            }}
-            id="checkout"
-          >
-            Read Products
-          </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
           </button>
