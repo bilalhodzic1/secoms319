@@ -210,17 +210,7 @@ function App() {
             }}
             id="checkout"
           >
-            Create Product
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              readTime();
-              getAllMilitary();
-            }}
-            id="checkout"
-          >
-            Read Products
+            Add Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
@@ -460,10 +450,7 @@ function App() {
         <strong>Course:</strong> COM S 319 <br></br>
         <strong>Date:</strong> 5/1/2023 <br></br>
         <strong>Professor:</strong> Professor Aldaco <br></br>
-        <strong>Intoduction:</strong> Welcome to Saya's Shoe Catalog! Our newly
-        launched website is our newest method of selling our products. The
-        website contains intuitive features for sellers to list new products
-        that they wish to sell!
+        <strong>Intoduction:</strong> Since 1776 our
       </div>
     );
   }
