@@ -276,6 +276,9 @@ function App() {
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
+          </button>
           <button
             type="button"
             onClick={() => {
@@ -310,6 +313,9 @@ function App() {
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
+          </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
@@ -399,6 +405,9 @@ function App() {
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
+          </button>
           <button
             type="button"
             onClick={() => {
@@ -433,6 +442,9 @@ function App() {
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
+          </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
@@ -522,6 +534,9 @@ function App() {
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
+          </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
           </button>
@@ -571,6 +586,9 @@ function App() {
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
+          </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
@@ -638,6 +656,9 @@ function App() {
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
+          </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add Chemical
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
