@@ -241,9 +241,9 @@ function App() {
           </button>
         </div>
         <div class="header">
-          <h1>Saya's Shoe Catalog </h1>
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
           <button onClick={() => getAllProducts()}>Show all Products</button>
-          <h1>Show all Available Products:</h1>
+          <h2>Featured Items:</h2>
         </div>
         {viewer1 && <div class="products">{showAllItems}</div>}
       </div>

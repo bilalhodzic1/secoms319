@@ -37,11 +37,91 @@
   }
 }
 
+body {
+  background-image: url(C:\Users\Trist\git\secoms319\newfrontend\images\camoback.png);
+  background-size: cover;
+}
+
+.topnavHome {
+  overflow: hidden;
+  background-color: mintcream;
+  text-align: center;
+}
+
+.topnavHome button {
+  background-color: #324a32;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+.topnavHome :hover {
+  background-color: #d3d3d3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  transition: 0.5s;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: mintcream;
+  text-align: center;
+  border-bottom: solid;
+}
+
+.topnav button {
+  background-color: #324a32;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+.topnav :hover {
+  background-color: #d3d3d3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  transition: 0.5s;
+}
+
 .header {
   text-align: center;
-  background-color: #d3d3d3;
+  background-color: mintcream;
   border-style: solid;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: Copperplate gothic light, Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  font-size: x-large;
 }
 
 .index {
@@ -51,29 +131,12 @@
   padding-bottom: 1%;
 }
 
-.topnavHome {
-  overflow: hidden;
-  background-color: #d3d3d3;
-  text-align: center;
-  padding-top: 6px;
-  padding-bottom: 5px;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #d3d3d3;
-  text-align: center;
-  padding-top: 6px;
-  padding-bottom: 5px;
-  border-bottom: solid;
-}
-
 .oneProduct {
   text-align: center;
 }
 
 .item {
-  background-color: #d3d3d3;
+  background-color: mintcream;
   text-align: center;
   border-style: solid;
 }
@@ -92,7 +155,7 @@
 
 .addProduct {
   text-align: center;
-  background-color: #d3d3d3;
+  background-color: mintcream;
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -107,12 +170,12 @@
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: #d3d3d3;
+  background-color: mintcream;
 }
 
 .deleteProduct {
   text-align: center;
-  background-color: #d3d3d3;
+  background-color: mintcream;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -125,12 +188,12 @@
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: #d3d3d3;
+  background-color: mintcream;
 }
 
 .updateProduct {
   text-align: center;
-  background-color: #d3d3d3;
+  background-color: mintcream;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -143,5 +206,5 @@
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: #d3d3d3;
+  background-color: mintcream;
 }
