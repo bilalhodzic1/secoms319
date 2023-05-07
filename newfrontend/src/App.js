@@ -203,6 +203,9 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            View Chemicals
+          </button>
           <button
             type="button"
             onClick={() => {
@@ -244,6 +247,9 @@ function App() {
         <div class="topnav">
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            View Chemicals
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
@@ -330,6 +336,9 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            View Chemicals
+          </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
           </button>
@@ -376,6 +385,9 @@ function App() {
         <div class="topnav">
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            View Chemicals
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
@@ -441,6 +453,9 @@ function App() {
           <button type="button" onClick={() => readTime()} id="checkout">
             Home
           </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            View Chemicals
+          </button>
           <button type="button" onClick={() => addTime()} id="checkout">
             Add Product
           </button>
@@ -455,15 +470,19 @@ function App() {
           </button>
         </div>
         <strong>Names:</strong> Tristan Sayasit and Bilal Hodzic <br></br>
-        <img src=""></img>
+        <img
+          src="http://127.0.0.1:4000/images/4lthefounders.jpg"
+          width="300"
+        ></img>{" "}
+        <br></br>
         <strong>Emails:</strong> sayasit7@iastate.edu and bhodzic@iastate.edu
         <br></br>
         <strong>Course:</strong> SE/ComS319 Construction of User Interfaces
         <br></br>
         <strong>Date:</strong> Spring 2023, 5/5/2023 <br></br>
         <strong>Professor:</strong> Dr. Abraham N. Aldaco Gastelum <br></br>
-        <strong>Professor Email: aaldaco@iastate.edu</strong>
-        <strong>Intoduction:</strong>
+        <strong>Professor Email:</strong> aaldaco@iastate.edu <br></br>
+        <strong>Intoduction: </strong>
       </div>
     );
   }
