@@ -44,7 +44,7 @@ body {
 
 .topnavHome {
   overflow: hidden;
-  background-color: mintcream;
+  background-color: #fdfeff;
   text-align: center;
 }
 
@@ -80,7 +80,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: mintcream;
+  background-color: #fdfeff;
   text-align: center;
   border-bottom: solid;
 }
@@ -117,7 +117,7 @@ body {
 
 .header {
   text-align: center;
-  background-color: mintcream;
+  background-color: #fdfeff;
   border-style: solid;
   font-family: Copperplate gothic light, Impact, Haettenschweiler,
     "Arial Narrow Bold", sans-serif;
@@ -136,7 +136,7 @@ body {
 }
 
 .item {
-  background-color: mintcream;
+  background-color: #fdfeff;
   text-align: center;
   border-style: solid;
 }
@@ -155,7 +155,7 @@ body {
 
 .addProduct {
   text-align: center;
-  background-color: mintcream;
+  background-color: #fdfeff;
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -170,12 +170,12 @@ body {
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: mintcream;
+  background-color: #fdfeff;
 }
 
 .deleteProduct {
   text-align: center;
-  background-color: mintcream;
+  background-color: #fdfeff;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -188,12 +188,12 @@ body {
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: mintcream;
+  background-color: #fdfeff;
 }
 
 .updateProduct {
   text-align: center;
-  background-color: mintcream;
+  background-color: #fdfeff;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -206,5 +206,5 @@ body {
   border-style: solid;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: mintcream;
+  background-color: #fdfeff;
 }
