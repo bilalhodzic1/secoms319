@@ -151,7 +151,7 @@ function App() {
     e.preventDefault();
     console.log(e.target.value);
     fetch("http://localhost:4000/Update", {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateProduct),
     })
