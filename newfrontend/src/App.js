@@ -225,7 +225,13 @@ function App() {
   if (currState === 0) {
     return (
       <div class="index">
-        <div class="topnavHome">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Home
+          </button>
           <button
             type="button"
             onClick={() => {
@@ -233,17 +239,7 @@ function App() {
             }}
             id="checkout"
           >
-            Create Product
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              readTime();
-              getAllProducts();
-            }}
-            id="checkout"
-          >
-            Read Products
+            Add Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
@@ -255,22 +251,21 @@ function App() {
             Info
           </button>
         </div>
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <h2>Featured Items:</h2>
-        </div>
         {<div class="products">{showAllItems}</div>}
       </div>
     );
   } else if (currState === 1) {
     return (
       <div class="addProduct">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
         <div class="topnav">
-          <button type="button" onClick={() => addTime()} id="checkout">
-            Create Product
-          </button>
           <button type="button" onClick={() => readTime()} id="checkout">
-            Read Products
+            Home
+          </button>
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Add Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
@@ -365,12 +360,15 @@ function App() {
   } else if (currState === 3) {
     return (
       <div class="delete">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
         <div class="topnav">
-          <button type="button" onClick={() => addTime()} id="checkout">
-            Create Product
-          </button>
           <button type="button" onClick={() => readTime()} id="checkout">
-            Read Products
+            Home
+          </button>
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Add Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
@@ -411,12 +409,15 @@ function App() {
   } else if (currState === 2) {
     return (
       <div class="update">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
         <div class="topnav">
-          <button type="button" onClick={() => addTime()} id="checkout">
-            Create Product
-          </button>
           <button type="button" onClick={() => readTime()} id="checkout">
-            Read Products
+            Home
+          </button>
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Add Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
@@ -472,12 +473,15 @@ function App() {
   } else if (currState == 4) {
     return (
       <div class="info">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
         <div class="topnav">
-          <button type="button" onClick={() => addTime()} id="checkout">
-            Create Product
-          </button>
           <button type="button" onClick={() => readTime()} id="checkout">
-            Read Products
+            Home
+          </button>
+          <button type="button" onClick={() => addTime()} id="checkout">
+            Add Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
