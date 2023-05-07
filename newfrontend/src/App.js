@@ -330,7 +330,7 @@ function App() {
             Info
           </button>
         </div>
-        <h3>Add a new Product :</h3>
+        <h3>Add a new Chemical:</h3>
         <form action="">
           <label for="_id">ID? </label>
           <input
@@ -459,7 +459,7 @@ function App() {
             Info
           </button>
         </div>
-        <h3>Add a new Product :</h3>
+        <h3>Add a new Product:</h3>
         <form action="">
           <label for="_id">ID? </label>
           <input
@@ -673,15 +673,17 @@ function App() {
             Info
           </button>
         </div>
+        <br></br>
         <strong>Intoduction:</strong> Formerly the largest Midwest distributor
         for United States Military memorabilia and vehicles, now the largest
         distributor <strong>worldwide</strong> for all military and chemical
-        products. Serving the community since 1776. <br></br>
-        <strong>Names:</strong> Tristan Sayasit and Bilal Hodzic <br></br>
+        products. Serving the community since 1776. <br></br> <br></br>
+        <strong>The Founders:</strong> Tristan Sayasit and Bilal Hodzic
+        <br></br>
         <img
           src="http://127.0.0.1:4000/images/4lthefounders.jpg"
           width="300"
-        ></img>{" "}
+        ></img>
         <br></br>
         <strong>Emails:</strong> sayasit7@iastate.edu and bhodzic@iastate.edu
         <br></br>
