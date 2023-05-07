@@ -81,7 +81,6 @@ app.put("/Update/military", async (req, res) => {
   const pprice = req.body.price;
 
   try {
-    console.log("here");
     const query = { _id: p_id };
     const toUpdate = await Military.findOne(query);
     if (pprice !== -1) {

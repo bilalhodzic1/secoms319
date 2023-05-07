@@ -122,7 +122,7 @@ function App() {
   function handleupdateOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
-    fetch("http://localhost:4000/Update", {
+    fetch("http://localhost:4000/Update/military", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateProduct),
