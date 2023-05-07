@@ -10,6 +10,7 @@ function App() {
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
   const [currState, setCurrState] = useState(0);
+  const [listItems, setListItems] = useState();
 
   const addTime = () => {
     setCurrState(1);
@@ -69,7 +70,7 @@ function App() {
         console.log(data);
         setProduct(data);
       });
-    setViewer1(!viewer1);
+    setListItems();
   }
   function getOneProduct(id) {
     console.log(id);
@@ -225,10 +226,23 @@ function App() {
     return (
       <div class="index">
         <div class="topnavHome">
-          <button type="button" onClick={() => addTime()} id="checkout">
+          <button
+            type="button"
+            onClick={() => {
+              addTime();
+            }}
+            id="checkout"
+          >
             Create Product
           </button>
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button
+            type="button"
+            onClick={() => {
+              readTime();
+              getAllProducts();
+            }}
+            id="checkout"
+          >
             Read Products
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
@@ -246,7 +260,7 @@ function App() {
           <button onClick={() => getAllProducts()}>Show all Products</button>
           <h1>Show all Available Products:</h1>
         </div>
-        {viewer1 && <div class="products">{showAllItems}</div>}
+        {<div class="products">{showAllItems}</div>}
       </div>
     );
   } else if (currState === 1) {
