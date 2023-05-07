@@ -482,6 +482,10 @@ function App() {
             Info
           </button>
         </div>
+        <strong>Intoduction:</strong> Formerly the largest Midwest distributor
+        for United States Military memorabilia and vehicles, now the largest
+        distributor <strong>worldwide</strong> for all military and chemical
+        products. Serving the community since 1776. <br></br>
         <strong>Names:</strong> Tristan Sayasit and Bilal Hodzic <br></br>
         <img
           src="http://127.0.0.1:4000/images/4lthefounders.jpg"
@@ -495,10 +499,6 @@ function App() {
         <strong>Date:</strong> Spring 2023, 5/5/2023 <br></br>
         <strong>Professor:</strong> Dr. Abraham N. Aldaco Gastelum <br></br>
         <strong>Professor Email:</strong> aaldaco@iastate.edu <br></br>
-        <strong>Intoduction:</strong> Formerly the largest Midwest distributor
-        for United States Military memorabilia and vehicles, now the largest
-        distributor worldwide for all military and chemical products. Serving
-        the community since 1776.
       </div>
     );
   }
