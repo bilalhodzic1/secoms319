@@ -71,17 +71,13 @@ app.delete("/delete", async (req, res) => {
     console.log("Error while deleting :" + p_id + " " + err);
   }
 });
-app.post("/Update", async (req, res) => {
+app.put("/Update", async (req, res) => {
   console.log("Update :", req.body);
   const p_id = req.body._id;
-  const ptitle = req.body.title;
   const pprice = req.body.price;
-  const pdescription = req.body.description;
-  const pcategory = req.body.category;
-  const pimage = req.body.image;
-  const prate = req.body.rating.rate;
-  const pcount = req.body.rating.count;
+
   try {
+    console.log("here");
     const query = { _id: p_id };
     const toUpdate = await Product.findOne(query);
     if (pprice !== -1) {
