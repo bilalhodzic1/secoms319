@@ -257,7 +257,6 @@ function App() {
         </div>
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <button onClick={() => getAllProducts()}>Show all Products</button>
           <h2>Featured Items:</h2>
         </div>
         {<div class="products">{showAllItems}</div>}
