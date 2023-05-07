@@ -122,7 +122,7 @@ function App() {
   function handleupdateOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
-    fetch("http://localhost:4000/Update/military", {
+    fetch("http://localhost:4000/Update", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updateProduct),
@@ -211,6 +211,16 @@ function App() {
             id="checkout"
           >
             Add Product
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              readTime();
+              getAllMilitary();
+            }}
+            id="checkout"
+          >
+            Read Products
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
             Update Product
