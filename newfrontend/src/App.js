@@ -96,7 +96,7 @@ function App() {
       });
   }
   function getAllChemicals() {
-    fetch("http://localhost:4000/chemicals")
+    fetch("http://localhost:4000/chemical")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -354,7 +354,7 @@ function App() {
           <input
             type="number"
             placeholder="price?"
-            name="price"
+            name="pricechemical"
             value={addNewChemical.price}
             onChange={handleChangeChemical}
           />
@@ -363,7 +363,7 @@ function App() {
           <input
             type="text"
             placeholder="desc?"
-            name="description"
+            name="descriptionchemical"
             value={addNewChemical.description}
             onChange={handleChangeChemical}
           />
