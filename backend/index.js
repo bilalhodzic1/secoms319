@@ -37,6 +37,31 @@ app.get("/:id/military", async (req, resp) => {
   console.log(oneProduct);
   resp.send(oneProduct);
 });
+app.post("/insert/chemical", async (req, res) => {
+  console.log(req.body);
+  const p_id = req.body._id;
+  const ptitle = req.body.title;
+  const pprice = req.body.price;
+  const pdescription = req.body.description;
+  const pcategory = req.body.category;
+  const pimage = req.body.image;
+  const formData = new Chemical({
+    _id: p_id,
+    title: ptitle,
+    price: pprice,
+    description: pdescription,
+    category: pcategory,
+    image: pimage,
+  });
+  try {
+    // await formData.save();
+    await Chemical.create(formData);
+    const messageResponse = { message: `Chemical ${p_id} added correctly` };
+    res.send(JSON.stringify(messageResponse));
+  } catch (err) {
+    console.log("Error while adding a new military:" + err);
+  }
+});
 app.post("/insert/Military", async (req, res) => {
   console.log(req.body);
   const p_id = req.body._id;
