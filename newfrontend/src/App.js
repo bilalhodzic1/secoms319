@@ -165,6 +165,7 @@ function App() {
           alert(value);
         }
       });
+    getAllProducts();
   }
   function handleOnSubmit(e) {
     e.preventDefault();
