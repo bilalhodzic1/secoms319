@@ -9,7 +9,7 @@ function App() {
   const [viewer2, setViewer2] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
-  const [currState, setCurrState] = useState(0);
+  const [currState, setCurrState] = useState(-1);
 
   //VIEW CHANGES
   const addTime = () => {
@@ -285,7 +285,23 @@ function App() {
   }
   //RETURN VIEWS
   //HOME
-  if (currState === 0) {
+  if (currState === -1) {
+    return (
+      <div class="index">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+        </div>
+      </div>
+    );
+  } else if (currState === 0) {
     return (
       <div class="index">
         <div class="header">
