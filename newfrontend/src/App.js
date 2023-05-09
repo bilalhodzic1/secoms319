@@ -5,13 +5,11 @@ import { useState, useEffect } from "react";
 function App() {
   const [Military, setMilitary] = useState([]);
   const [Chemical, setChemical] = useState([]);
-  const [viewer1, setViewer1] = useState(false);
   const [oneProduct, setOneProduct] = useState([]);
   const [viewer2, setViewer2] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
   const [currState, setCurrState] = useState(0);
-  const [listItems, setListItems] = useState();
 
   const addTime = () => {
     setCurrState(1);
