@@ -11,6 +11,7 @@ function App() {
   const [index, setIndex] = useState(0);
   const [currState, setCurrState] = useState(0);
 
+  //VIEW CHANGES
   const addTime = () => {
     setCurrState(1);
   };
@@ -32,15 +33,19 @@ function App() {
   const addChemicalTime = () => {
     setCurrState(6);
   };
+
+  //REFRESH STORE LISTS
   useEffect(() => {
     getAllChemicals();
   }, [Chemical]);
   useEffect(() => {
     getAllMilitary();
   }, [Military]);
+  //ROTATING ROLLBACK EFFECT
   useEffect(() => {
     getAllMilitary();
   }, [checked4]);
+  //ADD STUFF TEMPLATE VARIABLE
   const [addNewProduct, setAddNewProduct] = useState({
     _id: 0,
     title: "",
@@ -57,6 +62,7 @@ function App() {
     category: "",
     image: "http://127.0.0.1:4000/images/",
   });
+  //UPDATE MILITARY TEMPLATE
   const [updateProduct, setupdateProduct] = useState({
     _id: 0,
     title: "notitle",
@@ -65,6 +71,7 @@ function App() {
     category: "nocat",
     image: "http://127.0.0.1:4000/images/",
   });
+  //GENERATES PRODUCT LIST FOR MILITARY
 
   const showAllItems = Military.map((el) => (
     <div key={el._id} class="item">
@@ -75,6 +82,7 @@ function App() {
       <br />
     </div>
   ));
+  //GENERATED PRODUCT LIST FOR CHEMICALS
   const showAllchemicals = Chemical.map((el) => (
     <div key={el._id} class="item">
       <img src={el.image} width={300} /> <br />
@@ -84,6 +92,7 @@ function App() {
       <br />
     </div>
   ));
+  //FETCHES MILITARY PRODUCTS FROM DATABASE
   function getAllMilitary() {
     fetch("http://localhost:4000/military")
       .then((response) => response.json())
@@ -93,6 +102,7 @@ function App() {
         setMilitary(data);
       });
   }
+  //FETCHES CHEMICALS FROM DATABASE
   function getAllChemicals() {
     fetch("http://localhost:4000/chemical")
       .then((response) => response.json())
@@ -101,6 +111,7 @@ function App() {
         setChemical(data);
       });
   }
+  //GET SINGULAR MILITARY FROM DATABASE
   function getOneProduct(id) {
     console.log(id);
     if (id >= 1 && id <= 20) {
@@ -118,6 +129,8 @@ function App() {
       console.log("Wrong number of Product id.");
     }
   }
+
+  //GENERATE SINGULAR ITEM FOR DISPLAT
   const showOneItem = oneProduct.map((el) => (
     <div key={el._id}>
       <img src={el.image} width={300} /> <br />
@@ -126,6 +139,7 @@ function App() {
       Price: {el.price} <br />
     </div>
   ));
+  //HANDLES CHANGE IN TYPING WJEN ADDING A NEW ITEM
   function handleChange(evt) {
     const value = evt.target.value;
     if (evt.target.name === "_id") {
@@ -143,6 +157,7 @@ function App() {
       setAddNewProduct({ ...addNewProduct, image: temp });
     }
   }
+  //HANDLES SAME THING FOR CHEMICAL
   function handleChangeChemical(evt) {
     const value = evt.target.value;
     if (evt.target.name === "_idchemical") {
@@ -160,6 +175,7 @@ function App() {
       setAddNewChemical({ ...addNewChemical, image: temp });
     }
   }
+  //HANDLES FORM CHANGE FOR UPDATING
   function handleupdateChange(evt) {
     const value = evt.target.value;
     if (evt.target.name === "_idupdate") {
@@ -168,6 +184,7 @@ function App() {
       setupdateProduct({ ...updateProduct, price: value });
     }
   }
+  //HANDLES SUBMISSION OF UPDATE TO DATABASE OF MILITARY
   function handleupdateOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
@@ -188,6 +205,7 @@ function App() {
       });
     getAllMilitary();
   }
+  //HANDLES ADDING A NEW MILITARY ITEM SUBMIT BUTTON TO DATABASE
   function handleOnSubmit(e) {
     e.preventDefault();
     console.log(e.target.value);
@@ -207,6 +225,7 @@ function App() {
         }
       });
   }
+  //HANDLES ADDING A NEW CHEMICAL TO DATABASE
   function handleOnSubmitChemical(e) {
     e.preventDefault();
     console.log(e.target.value);
@@ -226,6 +245,7 @@ function App() {
         }
       });
   }
+  //ROTATING PRODUCT FUNCTION NEXT
   function getOneByOneProductNext() {
     if (Military.length > 0) {
       if (index === Military.length - 1) setIndex(0);
@@ -234,6 +254,7 @@ function App() {
       else setChecked4(false);
     }
   }
+  //ROTATING PRODCUT FUNCTION PREVIOUS
   function getOneByOneProductPrev() {
     if (Military.length > 0) {
       if (index === 0) setIndex(Military.length - 1);
@@ -242,6 +263,7 @@ function App() {
       else setChecked4(false);
     }
   }
+  //HANDLES DELETING FROM DATABASE
   function deleteOneProduct(deleteid) {
     console.log("Product to delete :", deleteid);
     fetch("http://localhost:4000/delete/military", {
@@ -261,6 +283,8 @@ function App() {
       });
     setChecked4(!checked4);
   }
+  //RETURN VIEWS
+  //HOME
   if (currState === 0) {
     return (
       <div class="index">
@@ -299,7 +323,9 @@ function App() {
         {<div class="products">{showAllItems}</div>}
       </div>
     );
-  } else if (currState === 6) {
+  }
+  //ADDING A NEW CHEMICAL
+  else if (currState === 6) {
     return (
       <div class="addProduct">
         <div class="header">
@@ -390,7 +416,9 @@ function App() {
         </form>
       </div>
     );
-  } else if (currState === 5) {
+  }
+  //LOOK AT THE CHEMICALS VIEW
+  else if (currState === 5) {
     return (
       <div class="index">
         <div class="header">
@@ -428,7 +456,9 @@ function App() {
         {<div class="products">{showAllchemicals}</div>}
       </div>
     );
-  } else if (currState === 1) {
+  }
+  //ADD A NEW MILITARY VIEW
+  else if (currState === 1) {
     return (
       <div class="addProduct">
         <div class="header">
@@ -519,7 +549,9 @@ function App() {
         </form>
       </div>
     );
-  } else if (currState === 3) {
+  }
+  //DELETE VIEW
+  else if (currState === 3) {
     return (
       <div class="delete">
         <div class="header">
@@ -572,7 +604,9 @@ function App() {
         </button>
       </div>
     );
-  } else if (currState === 2) {
+  }
+  //UPDATE VIEW
+  else if (currState === 2) {
     return (
       <div class="update">
         <div class="header">
@@ -642,7 +676,9 @@ function App() {
         </div>
       </div>
     );
-  } else if (currState == 4) {
+  }
+  //INFO VIEW
+  else if (currState == 4) {
     return (
       <div class="info">
         <div class="header">
