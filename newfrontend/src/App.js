@@ -510,7 +510,7 @@ function App() {
   else if (currState === 5) {
     return (
       <div class="index">
-        <div class="header">
+        <div class="chemHeader">
           <h1>Saya’s Chemical Emporium</h1>
           <div class="btn-container">
             <button type="button">Sign Up</button>
