@@ -12,6 +12,9 @@ function App() {
   const [currState, setCurrState] = useState(-1);
 
   //VIEW CHANGES
+  const homeTime = () => {
+    setCurrState(-1);
+  };
   const addTime = () => {
     setCurrState(1);
   };
@@ -32,6 +35,9 @@ function App() {
   };
   const addChemicalTime = () => {
     setCurrState(6);
+  };
+  const militaryTime = () => {
+    setCurrState(7);
   };
 
   //REFRESH STORE LISTS
@@ -292,8 +298,14 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
+          </button>
+          <button type="button" onClick={() => militaryTime()} id="checkout">
+            Military Store
+          </button>
+          <button type="button" onClick={() => chemicalTime()} id="checkout">
+            Chemical Store
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -308,7 +320,7 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -348,7 +360,7 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -441,47 +453,49 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             View Chemicals
           </button>
-          <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              addTime();
-            }}
-            id="checkout"
-          >
-            Add Product
-          </button>
-          <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
-          </button>
-          <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
-          </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
           </button>
+          <input type="text" placeholder="Search..."></input>
         </div>
         {<div class="products">{showAllchemicals}</div>}
       </div>
     );
   }
   //ADD A NEW MILITARY VIEW
-  else if (currState === 1) {
+  else if (currState === 7) {
+    return (
+      <div class="militaryHome">
+        <div class="header">
+          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => homeTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => militaryTime()} id="checkout">
+            Military
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+        </div>
+      </div>
+    );
+  } else if (currState === 1) {
     return (
       <div class="addProduct">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -574,7 +588,7 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -629,7 +643,7 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -701,23 +715,14 @@ function App() {
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
         </div>
         <div class="topnav">
-          <button type="button" onClick={() => readTime()} id="checkout">
+          <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
+          <button type="button" onClick={() => militaryTime()} id="checkout">
+            Military Store
+          </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
-          </button>
-          <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
-          </button>
-          <button type="button" onClick={() => addTime()} id="checkout">
-            Add Product
-          </button>
-          <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
-          </button>
-          <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
+            Chemical Store
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info

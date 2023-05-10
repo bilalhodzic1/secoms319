@@ -69,7 +69,7 @@ body {
   left: 0;
 }
 
-.topnav :hover {
+.topnav button:hover {
   background-color: dimgray;
   border: none;
   color: white;
