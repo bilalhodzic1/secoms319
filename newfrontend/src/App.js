@@ -36,8 +36,17 @@ function App() {
   const addChemicalTime = () => {
     setCurrState(6);
   };
-  const militaryTime = () => {
+  const weaponTime = () => {
     setCurrState(7);
+  };
+  const vehicleTime = () => {
+    setCurrState(8);
+  };
+  const miscTime = () => {
+    setCurrState(9);
+  };
+  const allMilitaryTime = () => {
+    setCurrState(10);
   };
 
   //REFRESH STORE LISTS
@@ -293,15 +302,19 @@ function App() {
   //HOME
   if (currState === -1) {
     return (
-      <div class="index">
+      <div class="home">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => militaryTime()} id="checkout">
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
             Military Store
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -310,6 +323,40 @@ function App() {
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
           </button>
+          <button type="button" onClick={() => readTime()} id="checkout">
+            Read
+          </button>
+        </div>
+        <div class="grid-container">
+          <div class="divItem1">
+            <img
+              src="http://127.0.0.1:4000/images/militaryLogo.jpg"
+              alt="Saya's Military Surplus Logo"
+              width="550"
+              height="450"
+            ></img>
+            <button
+              type="button"
+              onClick={() => allMilitaryTime()}
+              id="checkout"
+            >
+              Enter Saya's Military Surplus
+            </button>
+          </div>
+          <div class="divItem2">
+            <img
+              src="http://127.0.0.1:4000/images/chemicalLogo.jpg"
+              alt="Saya's Chemical Emporium Logo"
+              width="550"
+              height="450"
+            ></img>
+            <button type="button" onClick={() => chemicalTime()} id="checkout">
+              Enter Saya's Chemical Emporium
+            </button>
+          </div>
+        </div>
+        <div class="footer">
+          <p>Footer</p>
         </div>
       </div>
     );
@@ -318,13 +365,17 @@ function App() {
       <div class="index">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
+            All Chemicals
           </button>
           <button type="button" onClick={() => addChemicalTime()} id="checkout">
             Add Chemical
@@ -349,6 +400,9 @@ function App() {
           </button>
         </div>
         {<div class="products">{showAllItems}</div>}
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }
@@ -358,13 +412,17 @@ function App() {
       <div class="addProduct">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
+            All Chemicals
           </button>
           <button type="button" onClick={() => addChemicalTime()} id="checkout">
             Add Chemical
@@ -442,6 +500,9 @@ function App() {
             Submit
           </button>
         </form>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }
@@ -450,41 +511,228 @@ function App() {
     return (
       <div class="index">
         <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <h1>Saya’s Chemical Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
+            All Chemicals
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
           </button>
           <input type="text" placeholder="Search..."></input>
         </div>
+        <div class="allChemContent">
+          <h1>WELCOME!</h1>
+          <img
+            src="http://127.0.0.1:4000/images/chemicalLogo.jpg"
+            alt="Saya's Chemical Emporium Logo"
+            width="800"
+            height="650"
+          ></img>
+          <h1>All Items</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
         {<div class="products">{showAllchemicals}</div>}
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }
-  //ADD A NEW MILITARY VIEW
+  //WEAPONS VIEW
   else if (currState === 7) {
     return (
-      <div class="militaryHome">
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+      <div class="military" id="weaponHome">
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => militaryTime()} id="checkout">
-            Military
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
+          </button>
+          <button type="button" onClick={() => weaponTime()} id="checkout">
+            Weapons
+          </button>
+          <button type="button" onClick={() => vehicleTime()} id="checkout">
+            Vehicles
+          </button>
+          <button type="button" onClick={() => miscTime()} id="checkout">
+            Misc.
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
           </button>
+          <input type="text" placeholder="Search..."></input>
+        </div>
+        <p>Weapons</p>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
+      </div>
+    );
+  } else if (currState === 8) {
+    return (
+      <div class="military" id="vehicleHome">
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => homeTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
+          </button>
+          <button type="button" onClick={() => weaponTime()} id="checkout">
+            Weapons
+          </button>
+          <button type="button" onClick={() => vehicleTime()} id="checkout">
+            Vehicles
+          </button>
+          <button type="button" onClick={() => miscTime()} id="checkout">
+            Misc.
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+          <input type="text" placeholder="Search..."></input>
+        </div>
+        <p>Vehicles</p>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
+      </div>
+    );
+  } else if (currState === 9) {
+    return (
+      <div class="military" id="miscHome">
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => homeTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
+          </button>
+          <button type="button" onClick={() => weaponTime()} id="checkout">
+            Weapons
+          </button>
+          <button type="button" onClick={() => vehicleTime()} id="checkout">
+            Vehicles
+          </button>
+          <button type="button" onClick={() => miscTime()} id="checkout">
+            Misc.
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+          <input type="text" placeholder="Search..."></input>
+        </div>
+        <p>Misc</p>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
+      </div>
+    );
+  } else if (currState === 10) {
+    return (
+      <div class="military" id="allMilitary">
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
+        </div>
+        <div class="topnav">
+          <button type="button" onClick={() => homeTime()} id="checkout">
+            Home
+          </button>
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
+          </button>
+          <button type="button" onClick={() => weaponTime()} id="checkout">
+            Weapons
+          </button>
+          <button type="button" onClick={() => vehicleTime()} id="checkout">
+            Vehicles
+          </button>
+          <button type="button" onClick={() => miscTime()} id="checkout">
+            Misc.
+          </button>
+          <button type="button" onClick={() => infoTime()} id="checkout">
+            Info
+          </button>
+          <input type="text" placeholder="Search..."></input>
+        </div>
+        <div class="allMilContent">
+          <h1>WELCOME!</h1>
+          <img
+            src="http://127.0.0.1:4000/images/militaryLogo.jpg"
+            alt="Saya's Military Surplus Logo"
+            width="900"
+            height="750"
+          ></img>
+          <h1>All Items</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div class="footer">
+          <p>Footer</p>
         </div>
       </div>
     );
@@ -493,13 +741,17 @@ function App() {
       <div class="addProduct">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
+            All Chemicals
           </button>
           <button type="button" onClick={() => addChemicalTime()} id="checkout">
             Add Chemical
@@ -577,6 +829,9 @@ function App() {
             Submit
           </button>
         </form>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }
@@ -586,13 +841,17 @@ function App() {
       <div class="delete">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
+            All Chemicals
           </button>
           <button type="button" onClick={() => addChemicalTime()} id="checkout">
             Add Chemical
@@ -632,6 +891,9 @@ function App() {
         <button onClick={() => deleteOneProduct(Military[index]._id)}>
           Delete
         </button>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }
@@ -641,13 +903,17 @@ function App() {
       <div class="update">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
-            View Chemicals
+            All Chemicals
           </button>
           <button type="button" onClick={() => addChemicalTime()} id="checkout">
             Add Chemical
@@ -704,6 +970,9 @@ function App() {
             </button>
           </form>
         </div>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }
@@ -713,12 +982,16 @@ function App() {
       <div class="info">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+          <div class="btn-container">
+            <button type="button">Sign Up</button>
+            <button type="button">Login</button>
+          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => militaryTime()} id="checkout">
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
             Military Store
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
@@ -728,25 +1001,54 @@ function App() {
             Info
           </button>
         </div>
-        <br></br>
-        <strong>Intoduction:</strong> Formerly the largest Midwest distributor
-        for United States Military memorabilia and vehicles, now the largest
-        distributor <strong>worldwide</strong> for all military and chemical
-        products. Serving the community since 1776. <br></br> <br></br>
-        <strong>The Founders:</strong> Tristan Sayasit and Bilal Hodzic
-        <br></br>
-        <img
-          src="http://127.0.0.1:4000/images/4lthefounders.jpg"
-          width="300"
-        ></img>
-        <br></br>
-        <strong>Emails:</strong> sayasit7@iastate.edu and bhodzic@iastate.edu
-        <br></br>
-        <strong>Course:</strong> SE/ComS319 Construction of User Interfaces
-        <br></br>
-        <strong>Date:</strong> Spring 2023, 5/5/2023 <br></br>
-        <strong>Professor:</strong> Dr. Abraham N. Aldaco Gastelum <br></br>
-        <strong>Professor Email:</strong> aaldaco@iastate.edu <br></br>
+        <div class="infoContent">
+          <h1>About Us</h1>
+          <div class="row">
+            <div class="column">
+              <img
+                src="http://127.0.0.1:4000/images/militaryLogo.jpg"
+                alt="Saya's Military Surplus Logo"
+                width="500"
+                height="400"
+              ></img>
+            </div>
+            <div class="column">
+              <img
+                src="http://127.0.0.1:4000/images/chemicalLogo.jpg"
+                alt="Saya's Chemical Emporium Logo"
+                width="500"
+                height="400"
+              ></img>
+            </div>
+          </div>
+          <strong>Intoduction:</strong> Originally founded in 1776 under the
+          name <em>Saya's Military Surplus</em> (abbreviated "SMS"), SMS
+          underwent a massive merger in 2016 with <em>Saya's Chemicals</em>.
+          This partnership ushered in an unprecedented era of worldwide military
+          and chemical commerce never seen before. What was formerly the largest
+          Midwest distributor for Military memorabilia and vehicles, now became
+          the largest distributor <strong>worldwide</strong> for all military
+          and chemical products. With unmatched selection and world-class
+          customer service, Saya's Chemical and Military Surplus Emporium is
+          ready to serve your needs.<br></br> <br></br>
+          <strong>The Founders:</strong> Tristan Sayasit and Bilal Hodzic
+          <br></br>
+          <img
+            src="http://127.0.0.1:4000/images/4lthefounders.jpg"
+            alt="4lthefounders"
+            width="300"
+          ></img>
+          <strong>Emails:</strong> sayasit7@iastate.edu and bhodzic@iastate.edu
+          <br></br>
+          <strong>Course:</strong> SE/ComS319 Construction of User Interfaces
+          <br></br>
+          <strong>Date:</strong> Spring 2023, 5/5/2023 <br></br>
+          <strong>Professor:</strong> Dr. Abraham N. Aldaco Gastelum <br></br>
+          <strong>Professor Email:</strong> aaldaco@iastate.edu <br></br>
+        </div>
+        <div class="footer">
+          <p>Footer</p>
+        </div>
       </div>
     );
   }

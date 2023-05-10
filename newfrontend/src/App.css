@@ -38,8 +38,24 @@
 }
 
 body {
+  background-image: url(http://127.0.0.1:4000/images/baseBackground.jpg);
+  background-size: cover;
+}
+
+.military {
   background-image: url(http://127.0.0.1:4000/images/camoback.png);
   background-size: cover;
+}
+
+.footer {
+  width: 100%;
+  background-color: #393d2b;
+  color: white;
+  text-align: center;
+  height: 50px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 1px;
 }
 
 .topnav {
@@ -67,6 +83,7 @@ body {
   float: left;
   top: 0;
   left: 0;
+  cursor: pointer;
 }
 
 .topnav button:hover {
@@ -76,14 +93,70 @@ body {
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border-style: solid;
+  border-radius: 10%;
+  top: 0;
+  left: 0;
   transition: 0.5s;
 }
 
+.topnav input {
+  float: right;
+  padding: 6px;
+  border: solid;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
 .header {
+  text-align: center;
+  background-color: #fdffff;
+  border-style: solid;
+  font-family: "Bahnschrift SemiBold", "Franklin Gothic Medium", "Arial Narrow",
+    Arial, sans-serif;
+  font-size: x-large;
+  text-align: left;
+  padding-left: 1%;
+  opacity: 0.94;
+  display: flex;
+}
+
+.header button {
+  width: 100%;
+  background-color: #273327;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.header button:hover {
+  width: 100%;
+  background-color: dimgray;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.milHeader {
   text-align: center;
   background-color: #fdffff;
   border-style: solid;
@@ -92,9 +165,45 @@ body {
   font-size: x-large;
   text-align: left;
   padding-left: 1%;
+  opacity: 0.94;
+  display: flex;
 }
 
-.index {
+.milHeader button {
+  width: 100%;
+  background-color: #273327;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.milHeader button:hover {
+  width: 100%;
+  background-color: dimgray;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-container {
+  width: 8%;
+  margin-left: auto;
+  padding: 5px 5px;
 }
 
 .oneProduct {
@@ -164,13 +273,159 @@ body {
   border-style: solid;
 }
 
-.info {
+.infoContent {
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding-bottom: 1%;
-  background-color: #fdfeff;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.info img {
-  border: dotted;
+.infoContent img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  margin-bottom: 2%;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.allMilContent p {
+  color: white;
+  text-align: center;
+}
+
+.allMilContent img {
+  margin-top: 1%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border: 4px solid;
+}
+
+.allMilContent h1 {
+  color: white;
+  text-align: center;
+  font-family: Copperplate gothic light, Impact, Haettenschweiler,
+    "Arial Narrow Bold", sans-serif;
+  font-size: 280%;
+}
+
+.allChemContent p {
+  text-align: center;
+}
+
+.allChemContent img {
+  margin-top: 1%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border: 4px solid;
+}
+
+.allChemContent h1 {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 280%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.divItem1 {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+}
+
+.divItem1 img {
+  border: 6px solid;
+}
+
+.divItem2 {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+}
+
+.divItem2 img {
+  border: 6px solid;
+}
+
+.divItem1 button {
+  background-color: #273327;
+  border: none;
+  color: white;
+  margin: 15px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 15%;
+  cursor: pointer;
+}
+
+.divItem1 button:hover {
+  background-color: dimgray;
+  border: none;
+  color: white;
+  margin: 15px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 15%;
+  transition: 0.5s;
+}
+
+.divItem2 button {
+  background-color: #1683ce;
+  border: none;
+  color: white;
+  margin: 15px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 15%;
+  cursor: pointer;
+}
+
+.divItem2 button:hover {
+  background-color: dimgray;
+  border: none;
+  color: white;
+  margin: 15px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border-style: solid;
+  border-radius: 15%;
+  transition: 0.5s;
 }
