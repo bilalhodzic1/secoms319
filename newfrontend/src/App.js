@@ -731,6 +731,7 @@ function App() {
             officia deserunt mollit anim id est laborum.
           </p>
         </div>
+        {<div class="products">{showAllItems}</div>}
         <div class="footer">
           <p>Footer</p>
         </div>
