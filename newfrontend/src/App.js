@@ -36,15 +36,6 @@ function App() {
   const addChemicalTime = () => {
     setCurrState(6);
   };
-  const weaponTime = () => {
-    setCurrState(7);
-  };
-  const vehicleTime = () => {
-    setCurrState(8);
-  };
-  const miscTime = () => {
-    setCurrState(9);
-  };
   const allMilitaryTime = () => {
     setCurrState(10);
   };
@@ -305,10 +296,6 @@ function App() {
       <div class="home">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -365,10 +352,6 @@ function App() {
       <div class="index">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -412,10 +395,6 @@ function App() {
       <div class="addProduct">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -512,10 +491,6 @@ function App() {
       <div class="index">
         <div class="chemHeader">
           <h1>Saya’s Chemical Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -527,7 +502,6 @@ function App() {
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
           </button>
-          <input type="text" placeholder="Search..."></input>
         </div>
         <div class="allChemContent">
           <h1>WELCOME!</h1>
@@ -561,128 +535,11 @@ function App() {
         </div>
       </div>
     );
-  }
-  //WEAPONS VIEW
-  else if (currState === 7) {
-    return (
-      <div class="military" id="weaponHome">
-        <div class="milHeader">
-          <h1>Saya’s Military Surplus</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
-        </div>
-        <div class="topnav">
-          <button type="button" onClick={() => homeTime()} id="checkout">
-            Home
-          </button>
-          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
-            All Military
-          </button>
-          <button type="button" onClick={() => weaponTime()} id="checkout">
-            Weapons
-          </button>
-          <button type="button" onClick={() => vehicleTime()} id="checkout">
-            Vehicles
-          </button>
-          <button type="button" onClick={() => miscTime()} id="checkout">
-            Misc.
-          </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
-            Info
-          </button>
-          <input type="text" placeholder="Search..."></input>
-        </div>
-        <p>Weapons</p>
-        <div class="footer">
-          <p>© 2023 Saya, Inc. All Rights Reserved</p>
-        </div>
-      </div>
-    );
-  } else if (currState === 8) {
-    return (
-      <div class="military" id="vehicleHome">
-        <div class="milHeader">
-          <h1>Saya’s Military Surplus</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
-        </div>
-        <div class="topnav">
-          <button type="button" onClick={() => homeTime()} id="checkout">
-            Home
-          </button>
-          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
-            All Military
-          </button>
-          <button type="button" onClick={() => weaponTime()} id="checkout">
-            Weapons
-          </button>
-          <button type="button" onClick={() => vehicleTime()} id="checkout">
-            Vehicles
-          </button>
-          <button type="button" onClick={() => miscTime()} id="checkout">
-            Misc.
-          </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
-            Info
-          </button>
-          <input type="text" placeholder="Search..."></input>
-        </div>
-        <p>Vehicles</p>
-        <div class="footer">
-          <p>© 2023 Saya, Inc. All Rights Reserved</p>
-        </div>
-      </div>
-    );
-  } else if (currState === 9) {
-    return (
-      <div class="military" id="miscHome">
-        <div class="milHeader">
-          <h1>Saya’s Military Surplus</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
-        </div>
-        <div class="topnav">
-          <button type="button" onClick={() => homeTime()} id="checkout">
-            Home
-          </button>
-          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
-            All Military
-          </button>
-          <button type="button" onClick={() => weaponTime()} id="checkout">
-            Weapons
-          </button>
-          <button type="button" onClick={() => vehicleTime()} id="checkout">
-            Vehicles
-          </button>
-          <button type="button" onClick={() => miscTime()} id="checkout">
-            Misc.
-          </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
-            Info
-          </button>
-          <input type="text" placeholder="Search..."></input>
-        </div>
-        <p>Misc</p>
-        <div class="footer">
-          <p>© 2023 Saya, Inc. All Rights Reserved</p>
-        </div>
-      </div>
-    );
   } else if (currState === 10) {
     return (
       <div class="military" id="allMilitary">
         <div class="milHeader">
           <h1>Saya’s Military Surplus</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -691,19 +548,9 @@ function App() {
           <button type="button" onClick={() => allMilitaryTime()} id="checkout">
             All Military
           </button>
-          <button type="button" onClick={() => weaponTime()} id="checkout">
-            Weapons
-          </button>
-          <button type="button" onClick={() => vehicleTime()} id="checkout">
-            Vehicles
-          </button>
-          <button type="button" onClick={() => miscTime()} id="checkout">
-            Misc.
-          </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
           </button>
-          <input type="text" placeholder="Search..."></input>
         </div>
         <div class="allMilContent">
           <h1>WELCOME!</h1>
@@ -742,10 +589,6 @@ function App() {
       <div class="addProduct">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -842,10 +685,6 @@ function App() {
       <div class="delete">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -904,10 +743,6 @@ function App() {
       <div class="update">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -983,10 +818,6 @@ function App() {
       <div class="info">
         <div class="header">
           <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-          <div class="btn-container">
-            <button type="button">Sign Up</button>
-            <button type="button">Login</button>
-          </div>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
