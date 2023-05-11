@@ -93,7 +93,7 @@ function App() {
       <img src={el.image} width={300} /> <br />
       Title: {el.title} <br />
       Category: {el.category} <br />
-      Price: {el.price} <br />
+      Price: ${el.price} <br />
       <br />
     </div>
   ));
@@ -356,7 +356,7 @@ function App() {
           </div>
         </div>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -401,7 +401,7 @@ function App() {
         </div>
         {<div class="products">{showAllItems}</div>}
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -501,7 +501,7 @@ function App() {
           </button>
         </form>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -557,7 +557,7 @@ function App() {
         </div>
         {<div class="products">{showAllchemicals}</div>}
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -596,7 +596,7 @@ function App() {
         </div>
         <p>Weapons</p>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -633,7 +633,7 @@ function App() {
         </div>
         <p>Vehicles</p>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -670,7 +670,7 @@ function App() {
         </div>
         <p>Misc</p>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -731,9 +731,9 @@ function App() {
             officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        {<div class="products">{showAllItems}</div>}
+        {<div class="milProducts">{showAllItems}</div>}
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -831,7 +831,7 @@ function App() {
           </button>
         </form>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -893,7 +893,7 @@ function App() {
           Delete
         </button>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -972,7 +972,7 @@ function App() {
           </form>
         </div>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
@@ -1048,7 +1048,7 @@ function App() {
           <strong>Professor Email:</strong> aaldaco@iastate.edu <br></br>
         </div>
         <div class="footer">
-          <p>Footer</p>
+          <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
