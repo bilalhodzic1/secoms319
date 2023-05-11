@@ -9,35 +9,32 @@ function App() {
   const [viewer2, setViewer2] = useState(false);
   const [checked4, setChecked4] = useState(false);
   const [index, setIndex] = useState(0);
-  const [currState, setCurrState] = useState(-1);
+  const [currState, setCurrState] = useState(0);
 
   //VIEW CHANGES
   const homeTime = () => {
-    setCurrState(-1);
-  };
-  const addTime = () => {
-    setCurrState(1);
-  };
-  const updateTime = () => {
-    setCurrState(2);
-  };
-  const deleteTime = () => {
-    setCurrState(3);
-  };
-  const readTime = () => {
     setCurrState(0);
   };
-  const infoTime = () => {
+  const allMilitaryTime = () => {
+    setCurrState(1);
+  };
+  const addTime = () => {
+    setCurrState(2);
+  };
+  const updateTime = () => {
+    setCurrState(3);
+  };
+  const deleteTime = () => {
     setCurrState(4);
   };
-  const chemicalTime = () => {
+  const infoTime = () => {
     setCurrState(5);
   };
-  const addChemicalTime = () => {
+  const chemicalTime = () => {
     setCurrState(6);
   };
-  const allMilitaryTime = () => {
-    setCurrState(10);
+  const addChemicalTime = () => {
+    setCurrState(7);
   };
 
   //REFRESH STORE LISTS
@@ -82,9 +79,10 @@ function App() {
   const showAllItems = Military.map((el) => (
     <div key={el._id} class="item">
       <img src={el.image} width={300} /> <br />
-      Title: {el.title} <br />
-      Category: {el.category} <br />
-      Price: ${el.price} <br />
+      <strong>Title:</strong> {el.title} <br />
+      <strong>Category:</strong> {el.category} <br />
+      <strong>Price:</strong> ${el.price} per Unit <br />
+      <strong>Description:</strong> {el.description} <br />
       <br />
     </div>
   ));
@@ -92,9 +90,10 @@ function App() {
   const showAllchemicals = Chemical.map((el) => (
     <div key={el._id} class="item">
       <img src={el.image} width={300} /> <br />
-      Title: {el.title} <br />
-      Category: {el.category} <br />
-      Price: {el.price} <br />
+      <strong>Title:</strong> {el.title} <br />
+      <strong>Category:</strong> {el.category} <br />
+      <strong>Price:</strong> ${el.price} per Oz <br />
+      <strong>Description:</strong> {el.description} <br />
       <br />
     </div>
   ));
@@ -291,7 +290,7 @@ function App() {
   }
   //RETURN VIEWS
   //HOME
-  if (currState === -1) {
+  if (currState === 0) {
     return (
       <div class="home">
         <div class="header">
@@ -309,9 +308,6 @@ function App() {
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
-          </button>
-          <button type="button" onClick={() => readTime()} id="checkout">
-            Read
           </button>
         </div>
         <div class="grid-container">
@@ -347,54 +343,13 @@ function App() {
         </div>
       </div>
     );
-  } else if (currState === 0) {
-    return (
-      <div class="index">
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
-        </div>
-        <div class="topnav">
-          <button type="button" onClick={() => homeTime()} id="checkout">
-            Home
-          </button>
-          <button type="button" onClick={() => chemicalTime()} id="checkout">
-            All Chemicals
-          </button>
-          <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              addTime();
-            }}
-            id="checkout"
-          >
-            Add Product
-          </button>
-          <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
-          </button>
-          <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
-          </button>
-          <button type="button" onClick={() => infoTime()} id="checkout">
-            Info
-          </button>
-        </div>
-        {<div class="products">{showAllItems}</div>}
-        <div class="footer">
-          <p>© 2023 Saya, Inc. All Rights Reserved</p>
-        </div>
-      </div>
-    );
   }
-  //ADDING A NEW CHEMICAL
-  else if (currState === 6) {
+  //ADDING A NEW CHEMICAL PRODUCT
+  else if (currState === 7) {
     return (
       <div class="addProduct">
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        <div class="chemHeader">
+          <h1>Saya’s Chemical Emporium</h1>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
@@ -404,16 +359,7 @@ function App() {
             All Chemicals
           </button>
           <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
-          </button>
-          <button type="button" onClick={() => addTime()} id="checkout">
-            Add Product
-          </button>
-          <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
-          </button>
-          <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
+            Add a Chemical
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -486,7 +432,7 @@ function App() {
     );
   }
   //LOOK AT THE CHEMICALS VIEW
-  else if (currState === 5) {
+  else if (currState === 6) {
     return (
       <div class="index">
         <div class="chemHeader">
@@ -498,6 +444,9 @@ function App() {
           </button>
           <button type="button" onClick={() => chemicalTime()} id="checkout">
             All Chemicals
+          </button>
+          <button type="button" onClick={() => addChemicalTime()} id="checkout">
+            Add a Chemical
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -512,30 +461,14 @@ function App() {
             height="650"
           ></img>
           <h1>All Items</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </p>
         </div>
-        {<div class="products">{showAllchemicals}</div>}
+        {<div class="chemProducts">{showAllchemicals}</div>}
         <div class="footer">
           <p>© 2023 Saya, Inc. All Rights Reserved</p>
         </div>
       </div>
     );
-  } else if (currState === 10) {
+  } else if (currState === 1) {
     return (
       <div class="military" id="allMilitary">
         <div class="milHeader">
@@ -547,6 +480,21 @@ function App() {
           </button>
           <button type="button" onClick={() => allMilitaryTime()} id="checkout">
             All Military
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              addTime();
+            }}
+            id="checkout"
+          >
+            Add a Product
+          </button>
+          <button type="button" onClick={() => updateTime()} id="checkout">
+            Update a Product
+          </button>
+          <button type="button" onClick={() => deleteTime()} id="checkout">
+            Delete a Product
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -561,22 +509,6 @@ function App() {
             height="750"
           ></img>
           <h1>All Items</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
-          </p>
         </div>
         {<div class="milProducts">{showAllItems}</div>}
         <div class="footer">
@@ -584,30 +516,27 @@ function App() {
         </div>
       </div>
     );
-  } else if (currState === 1) {
+  } else if (currState === 2) {
     return (
       <div class="addProduct">
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => chemicalTime()} id="checkout">
-            All Chemicals
-          </button>
-          <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
-            Add Product
+            Add a Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
+            Update a Product
           </button>
           <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
+            Delete a Product
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -680,30 +609,27 @@ function App() {
     );
   }
   //DELETE VIEW
-  else if (currState === 3) {
+  else if (currState === 4) {
     return (
       <div class="delete">
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => chemicalTime()} id="checkout">
-            All Chemicals
-          </button>
-          <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
-            Add Product
+            Add a Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
+            Update a Product
           </button>
           <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
+            Delete a Product
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -738,30 +664,27 @@ function App() {
     );
   }
   //UPDATE VIEW
-  else if (currState === 2) {
+  else if (currState === 3) {
     return (
       <div class="update">
-        <div class="header">
-          <h1>Saya’s Chemical and Military Surplus Emporium</h1>
+        <div class="milHeader">
+          <h1>Saya’s Military Surplus</h1>
         </div>
         <div class="topnav">
           <button type="button" onClick={() => homeTime()} id="checkout">
             Home
           </button>
-          <button type="button" onClick={() => chemicalTime()} id="checkout">
-            All Chemicals
-          </button>
-          <button type="button" onClick={() => addChemicalTime()} id="checkout">
-            Add Chemical
+          <button type="button" onClick={() => allMilitaryTime()} id="checkout">
+            All Military
           </button>
           <button type="button" onClick={() => addTime()} id="checkout">
-            Add Product
+            Add a Product
           </button>
           <button type="button" onClick={() => updateTime()} id="checkout">
-            Update Product
+            Update a Product
           </button>
           <button type="button" onClick={() => deleteTime()} id="checkout">
-            Delete Product
+            Delete a Product
           </button>
           <button type="button" onClick={() => infoTime()} id="checkout">
             Info
@@ -770,7 +693,7 @@ function App() {
 
         <div class="updateProduct">
           <br></br>
-          <div>Search for Product by Id</div>
+          <h3>Search for Product by Id</h3>
           <input
             type="text"
             id="message"
@@ -813,7 +736,7 @@ function App() {
     );
   }
   //INFO VIEW
-  else if (currState == 4) {
+  else if (currState === 5) {
     return (
       <div class="info">
         <div class="header">
@@ -863,7 +786,8 @@ function App() {
           and chemical products. With unmatched selection and world-class
           customer service, Saya's Chemical and Military Surplus Emporium is
           ready to serve your needs.<br></br> <br></br>
-          <strong>The Founders:</strong> Tristan Sayasit and Bilal Hodzic
+          <strong>The Founders:</strong> Tristan Sayasit (right) and Bilal
+          Hodzic (left)
           <br></br>
           <img
             src="http://127.0.0.1:4000/images/4lthefounders.jpg"

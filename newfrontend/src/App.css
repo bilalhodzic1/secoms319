@@ -267,7 +267,16 @@ body {
 
 .milProducts {
   grid-template-columns: auto auto auto;
-  background-image: url(http://127.0.0.1:4000/images/baseBackground.jpg);
+  background-image: url(http://127.0.0.1:4000/images/camoback.jpg);
+  display: grid;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  grid-gap: 20px;
+}
+
+.chemProducts {
+  grid-template-columns: auto auto auto;
   display: grid;
   margin-left: 5%;
   margin-right: 5%;
